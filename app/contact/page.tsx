@@ -1,5 +1,4 @@
-"use client"
-
+import type { Metadata } from "next"
 import type React from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { Mail, MapPin, Phone, ChevronDown, ArrowUp, Share2 } from "lucide-react"
@@ -8,6 +7,45 @@ import { useState, useRef } from "react"
 import { useToast } from "@/hooks/use-toast"
 import emailjs from '@emailjs/browser'
 import { EMAILJS_CONFIG, EMAIL_TEMPLATE_PARAMS } from "@/lib/emailjs-config"
+import { StructuredData } from "@/components/structured-data"
+
+export const metadata: Metadata = {
+  title: "Contact Us - Get Your Project Started | Synergeek Technologies",
+  description: "Contact Synergeek Technologies for Digital Marketing, Web Development, Branding, and Creative Services. Located in Coimbatore, India. Get a free consultation for your project.",
+  keywords: [
+    "Contact Synergeek",
+    "Digital Marketing Consultation",
+    "Web Development Consultation", 
+    "Branding Consultation",
+    "Creative Agency Contact",
+    "Coimbatore Digital Agency",
+    "India Marketing Agency",
+    "Project Consultation",
+    "Free Quote",
+    "Business Inquiry"
+  ],
+  openGraph: {
+    title: "Contact Us - Get Your Project Started | Synergeek Technologies",
+    description: "Contact Synergeek Technologies for Digital Marketing, Web Development, Branding, and Creative Services. Located in Coimbatore, India. Get a free consultation for your project.",
+    url: "https://synergeektechnologies.in/contact",
+    images: [
+      {
+        url: "/synergeek-logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Contact Synergeek Technologies - Digital Marketing Agency",
+      },
+    ],
+  },
+  twitter: {
+    title: "Contact Us - Get Your Project Started | Synergeek Technologies",
+    description: "Contact Synergeek Technologies for Digital Marketing, Web Development, Branding, and Creative Services. Located in Coimbatore, India. Get a free consultation for your project.",
+    images: ["/synergeek-logo.png"],
+  },
+  alternates: {
+    canonical: "https://synergeektechnologies.in/contact",
+  },
+}
 
 export default function ContactPage() {
   const { toast } = useToast()
@@ -21,6 +59,55 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const formRef = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
+
+  const contactStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Synergeek Technologies",
+    "description": "Contact Synergeek Technologies for Digital Marketing, Web Development, Branding, and Creative Services. Located in Coimbatore, India.",
+    "url": "https://synergeektechnologies.in/contact",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Synergeek Technologies",
+      "description": "Creative Marketing Agency specialized in Digital Marketing, Web Design & Development, Video Production, Branding, SEO, and E-commerce Solutions",
+      "url": "https://synergeektechnologies.in",
+      "logo": "https://synergeektechnologies.in/synergeek-logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "182, Subramanium road",
+        "addressLocality": "RS Puram",
+        "addressRegion": "Tamil Nadu",
+        "addressCountry": "India",
+        "postalCode": "641002"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+919677741597",
+          "contactType": "customer service",
+          "areaServed": "IN",
+          "availableLanguage": "English"
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+919786763705",
+          "contactType": "customer service",
+          "areaServed": "IN",
+          "availableLanguage": "English"
+        },
+        {
+          "@type": "ContactPoint",
+          "email": "synergeektechnologies@gmail.com",
+          "contactType": "customer service",
+          "areaServed": "IN",
+          "availableLanguage": "English"
+        }
+      ],
+      "sameAs": [
+        "https://www.instagram.com/synergeek/"
+      ]
+    }
+  }
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -99,6 +186,7 @@ export default function ContactPage() {
 
   return (
     <div ref={containerRef} className="bg-black text-white">
+      <StructuredData data={contactStructuredData} />
       {/* Section 1 - Hero */}
       <motion.section
         style={{ opacity: heroOpacity, scale: heroScale }}

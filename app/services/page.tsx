@@ -1,12 +1,186 @@
-"use client"
-
+import type { Metadata } from "next"
 import { motion } from "framer-motion"
 import { Mail, MapPin, Phone, ArrowUp, Share2 } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { StructuredData } from "@/components/structured-data"
+
+export const metadata: Metadata = {
+  title: "Our Services - Digital Marketing, Web Development & Branding",
+  description: "Explore Synergeek's comprehensive services including Digital Marketing, Web Design & Development, Video Production, Branding, SEO, Social Media Marketing, Meta Ads, Google Ads, UI/UX Design, and E-commerce Solutions.",
+  keywords: [
+    "Digital Marketing Services",
+    "Web Design Services", 
+    "Web Development Services",
+    "Video Production Services",
+    "Branding Services",
+    "SEO Services",
+    "Social Media Marketing",
+    "Meta Ads Services",
+    "Google Ads Services",
+    "UI/UX Design Services",
+    "App Development Services",
+    "E-commerce Solutions",
+    "Content Production",
+    "Product Photography",
+    "Model Shoots",
+    "Influencer Marketing",
+    "Ad Campaigns",
+    "Search Engine Optimization"
+  ],
+  openGraph: {
+    title: "Our Services - Digital Marketing, Web Development & Branding | Synergeek",
+    description: "Explore Synergeek's comprehensive services including Digital Marketing, Web Design & Development, Video Production, Branding, SEO, Social Media Marketing, Meta Ads, Google Ads, UI/UX Design, and E-commerce Solutions.",
+    url: "https://synergeektechnologies.in/services",
+    images: [
+      {
+        url: "/synergeek-logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Synergeek Services - Digital Marketing Agency",
+      },
+    ],
+  },
+  twitter: {
+    title: "Our Services - Digital Marketing, Web Development & Branding | Synergeek",
+    description: "Explore Synergeek's comprehensive services including Digital Marketing, Web Design & Development, Video Production, Branding, SEO, Social Media Marketing, Meta Ads, Google Ads, UI/UX Design, and E-commerce Solutions.",
+    images: ["/synergeek-logo.png"],
+  },
+  alternates: {
+    canonical: "https://synergeektechnologies.in/services",
+  },
+}
 
 export default function ServicesPage() {
   const letters = "SERVICES".split("")
+
+  const servicesStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Digital Marketing & Creative Services",
+    "description": "Comprehensive digital marketing and creative services including web development, branding, video production, and SEO",
+    "provider": {
+      "@type": "Organization",
+      "name": "Synergeek Technologies",
+      "url": "https://synergeektechnologies.in",
+      "logo": "https://synergeektechnologies.in/synergeek-logo.png"
+    },
+    "serviceType": "Digital Marketing Services",
+    "areaServed": {
+      "@type": "Country",
+      "name": "India"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Digital Marketing Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "UI/UX Design",
+            "description": "Create engaging and user-friendly interfaces for your products and services"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "App Development",
+            "description": "Custom mobile applications to showcase your products and services"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Web Design & Development",
+            "description": "Create stunning and responsive websites to showcase your products and services"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Social Media Marketing",
+            "description": "Grow your brand on social media with targeted campaigns"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Meta Ads & Google Ads",
+            "description": "Create targeted ads to reach your audience and drive conversions"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Video Production",
+            "description": "Create engaging videos to showcase your products"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Product Photography",
+            "description": "Create engaging product photography to showcase your products"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Model and Influencer Shoots",
+            "description": "Create engaging model and influencer shoots to showcase your products"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Branding",
+            "description": "Complete branding solutions for your business"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Content Production",
+            "description": "Create engaging content to showcase your products and services"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Ad Campaigns",
+            "description": "Strategic advertising campaigns to grow your business"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Search Engine Optimization",
+            "description": "Improve your website's visibility in search engine results"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "E-commerce Solutions",
+            "description": "Complete e-commerce platform development and optimization"
+          }
+        }
+      ]
+    }
+  }
 
   const services = [
     "UI/UX Design",
@@ -30,6 +204,7 @@ export default function ServicesPage() {
 
   return (
     <div className="min-h-screen">
+      <StructuredData data={servicesStructuredData} />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-6 pt-20 bg-black">
         <div className="max-w-7xl mx-auto text-center">

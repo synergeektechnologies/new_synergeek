@@ -23,6 +23,7 @@ import {
 import Link from "next/link"
 import { useRef, useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
+import { StructuredData } from "@/components/structured-data"
 
 export default function HomePage() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -90,8 +91,110 @@ export default function HomePage() {
     { name: "A&D Batters", color: "#14B8A6" },
   ]
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Synergeek Technologies",
+    "description": "Creative Marketing Agency specialized in Digital Marketing, Web Design & Development, Video Production, Branding, SEO, and E-commerce Solutions",
+    "url": "https://synergeektechnologies.in",
+    "logo": "https://synergeektechnologies.in/synergeek-logo.png",
+    "image": "https://synergeektechnologies.in/synergeek-logo.png",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "182, Subramanium road",
+      "addressLocality": "RS Puram",
+      "addressRegion": "Tamil Nadu",
+      "addressCountry": "India",
+      "postalCode": "641002"
+    },
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+919677741597",
+        "contactType": "customer service",
+        "areaServed": "IN",
+        "availableLanguage": "English"
+      },
+      {
+        "@type": "ContactPoint",
+        "telephone": "+919786763705",
+        "contactType": "customer service",
+        "areaServed": "IN",
+        "availableLanguage": "English"
+      },
+      {
+        "@type": "ContactPoint",
+        "email": "synergeektechnologies@gmail.com",
+        "contactType": "customer service",
+        "areaServed": "IN",
+        "availableLanguage": "English"
+      }
+    ],
+    "sameAs": [
+      "https://www.instagram.com/synergeek/"
+    ],
+    "foundingDate": "2020",
+    "founders": [
+      {
+        "@type": "Person",
+        "name": "Synergeek Technologies"
+      }
+    ],
+    "serviceArea": {
+      "@type": "Country",
+      "name": "India"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Digital Marketing Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Digital Marketing",
+            "description": "Comprehensive digital marketing strategies including social media marketing, SEO, and online advertising"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Web Design & Development",
+            "description": "Custom website design and development services including UI/UX design and responsive web solutions"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Video Production",
+            "description": "Professional video production services including product photography and model shoots"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Branding",
+            "description": "Complete branding solutions including logo design, brand identity, and visual design"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "E-commerce Solutions",
+            "description": "E-commerce platform development and optimization services"
+          }
+        }
+      ]
+    }
+  }
+
   return (
     <div ref={containerRef} className="min-h-screen">
+      <StructuredData data={structuredData} />
       {/* Hero Section */}
       <motion.section
         style={{ opacity, scale }}

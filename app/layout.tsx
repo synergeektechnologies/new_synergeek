@@ -12,21 +12,72 @@ const bebasNeue = Bebas_Neue({ subsets: ["latin"], weight: "400" })
 const robotoCondensed = Roboto_Condensed({ subsets: ["latin"], weight: "300", variable: "--font-roboto-condensed" })
 
 export const metadata: Metadata = {
-  title: "Synergeek - Creative Marketing Agency",
-  description: "Synergeek is a Creative Marketing Agency, specialized in Digital marketing, Web design and development, Video Production and Branding.",
-  keywords: ["Synergeek", "Creative Marketing Agency", "Digital marketing", "Web design and development", "Video Production", "Branding"],
-  authors: [{ name: "Synergeek", url: "https://synergeek.com" }],
+  metadataBase: new URL('https://synergeektechnologies.in'),
+  title: {
+    default: "Synergeek - Creative Marketing Agency | Digital Marketing & Web Development",
+    template: "%s | Synergeek Technologies"
+  },
+  description: "Synergeek is a Creative Marketing Agency specialized in Digital Marketing, Web Design & Development, Video Production, Branding, SEO, and E-commerce Solutions. Based in Coimbatore, India.",
+  keywords: [
+    "Synergeek", 
+    "Creative Marketing Agency", 
+    "Digital Marketing", 
+    "Web Design", 
+    "Web Development", 
+    "Video Production", 
+    "Branding", 
+    "SEO", 
+    "E-commerce Solutions",
+    "Social Media Marketing",
+    "Meta Ads",
+    "Google Ads",
+    "UI/UX Design",
+    "App Development",
+    "Coimbatore",
+    "India"
+  ],
+  authors: [{ name: "Synergeek Technologies", url: "https://synergeektechnologies.in" }],
+  creator: "Synergeek Technologies",
+  publisher: "Synergeek Technologies",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   openGraph: {
-    title: "Synergeek",
-    description: "Synergeek is a Creative Marketing Agency, specialized in Digital marketing, Web design and development, Video Production and Branding.",
-    url: "https://synergeek.com",
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://synergeektechnologies.in',
+    siteName: 'Synergeek Technologies',
+    title: 'Synergeek - Creative Marketing Agency | Digital Marketing & Web Development',
+    description: 'Synergeek is a Creative Marketing Agency specialized in Digital Marketing, Web Design & Development, Video Production, Branding, SEO, and E-commerce Solutions.',
+    images: [
+      {
+        url: '/synergeek-logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Synergeek Technologies - Creative Marketing Agency',
+      },
+    ],
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Synergeek",
-    description: "Synergeek is a Creative Marketing Agency, specialized in Digital marketing, Web design and development, Video Production and Branding.",
-    images: ["https://synergeek.com/og-image.png"],
+    card: 'summary_large_image',
+    site: '@synergeek',
+    creator: '@synergeek',
+    title: 'Synergeek - Creative Marketing Agency | Digital Marketing & Web Development',
+    description: 'Synergeek is a Creative Marketing Agency specialized in Digital Marketing, Web Design & Development, Video Production, Branding, SEO, and E-commerce Solutions.',
+    images: ['/synergeek-logo.png'],
   },
+  alternates: {
+    canonical: 'https://synergeektechnologies.in',
+  },
+  category: 'technology',
 }
 
 export default function RootLayout({
