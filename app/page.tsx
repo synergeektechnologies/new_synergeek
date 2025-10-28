@@ -44,9 +44,9 @@ export default function HomePage() {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8])
 
-  const redSectionY = useTransform(servicesScrollProgress, [0, 0.5, 1], [100, 0, -100])
-  const orangeSectionY = useTransform(servicesScrollProgress, [0, 0.3, 0.7, 1], [200, 100, 0, -100])
-  const purpleSectionY = useTransform(servicesScrollProgress, [0, 0.5, 1], [300, 150, 0])
+  const redSectionY = useTransform(servicesScrollProgress, [0, 0.5, 1], [50, 0, -50])
+  const orangeSectionY = useTransform(servicesScrollProgress, [0, 0.3, 0.7, 1], [100, 50, 0, -50])
+  const purpleSectionY = useTransform(servicesScrollProgress, [0, 0.5, 1], [150, 75, 0])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -207,7 +207,7 @@ export default function HomePage() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter mb-8">
-              <span className="block text-balance inline-flex">
+              <span className="inline-flex text-balance">
                 {letters.map((letter, index) => (
                   <motion.span
                     key={index}
@@ -240,11 +240,12 @@ export default function HomePage() {
         </div>
       </motion.section>
 
-      <div ref={servicesRef} className="relative min-h-[300vh]">
+      {/* Services Section - Responsive Design */}
+      <div ref={servicesRef} className="relative">
         {/* Red/Coral Section - Software Development */}
         <motion.section
           style={{ y: redSectionY }}
-          className="sticky top-0 min-h-screen flex items-center justify-center overflow-hidden"
+          className="relative sm:sticky sm:top-0 min-h-screen flex items-center justify-center overflow-hidden"
         >
           <div className="absolute inset-0 bg-[#E53935]" />
           <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
@@ -255,13 +256,13 @@ export default function HomePage() {
               transition={{ duration: 0.8 }}
               className="text-center mb-16"
             >
-              <h2 className="text-5xl md:text-7xl font-bold text-white mb-6 text-balance">DIGITAL EXCELLENCE</h2>
-              <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto text-balance">
+              <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 text-balance">DIGITAL EXCELLENCE</h2>
+              <p className="text-lg sm:text-xl md:text-2xl text-white/90 max-w-3xl mx-auto text-balance">
                 Transforming ideas into powerful digital solutions
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-3 gap-8 md:gap-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 lg:gap-12">
               {[
                 {
                   icon: PenTool,
@@ -289,11 +290,11 @@ export default function HomePage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: index * 0.2 }}
                   whileHover={{ scale: 1.05, rotate: 0 }}
-                  className="bg-white rounded-2xl p-8 shadow-2xl"
+                  className="bg-white rounded-2xl p-6 md:p-8 shadow-2xl"
                 >
-                  <service.icon className="w-16 h-16 mb-6 text-[#E53935]" />
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{service.description}</p>
+                  <service.icon className="w-12 h-12 md:w-16 md:h-16 mb-4 md:mb-6 text-[#E53935]" />
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 md:mb-4">{service.title}</h3>
+                  <p className="text-sm md:text-base text-gray-600 leading-relaxed">{service.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -302,7 +303,7 @@ export default function HomePage() {
 
         <motion.section
           style={{ y: orangeSectionY }}
-          className="sticky top-0 min-h-screen flex items-center justify-center overflow-hidden"
+          className="relative sm:sticky sm:top-0 min-h-screen flex items-center justify-center overflow-hidden"
         >
           <div className="absolute inset-0 bg-[#F5A962]" />
           <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
@@ -313,13 +314,13 @@ export default function HomePage() {
               transition={{ duration: 0.8 }}
               className="text-center mb-16"
             >
-              <h2 className="text-5xl md:text-7xl font-bold text-white mb-6 text-balance">EXPERT MARKETING</h2>
-              <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto text-balance">
+              <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 text-balance">EXPERT MARKETING</h2>
+              <p className="text-lg sm:text-xl md:text-2xl text-white/90 max-w-3xl mx-auto text-balance">
                 Expert marketing strategies to grow your business
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 max-w-5xl mx-auto">
               {[
                 {
                   icon: Share2,
@@ -341,11 +342,11 @@ export default function HomePage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: index * 0.2 }}
                   whileHover={{ scale: 1.05, rotate: 0 }}
-                  className="bg-white rounded-2xl p-10 shadow-2xl"
+                  className="bg-white rounded-2xl p-6 md:p-8 lg:p-10 shadow-2xl"
                 >
-                  <service.icon className="w-16 h-16 mb-6 text-[#F5A962]" />
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
-                  <p className="text-gray-600 leading-relaxed text-lg">{service.description}</p>
+                  <service.icon className="w-12 h-12 md:w-16 md:h-16 mb-4 md:mb-6 text-[#F5A962]" />
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 md:mb-4">{service.title}</h3>
+                  <p className="text-sm md:text-base lg:text-lg text-gray-600 leading-relaxed">{service.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -353,12 +354,11 @@ export default function HomePage() {
         </motion.section>
 
         {/* Purple Section - Innovation */}
-        // same as red section
         <motion.section
           style={{ y: purpleSectionY }}
-          className="sticky top-0 min-h-screen flex items-center justify-center overflow-hidden"
+          className="relative sm:sticky sm:top-0 min-h-screen flex items-center justify-center overflow-hidden"
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-indigo-700" />
+          <div className="absolute inset-0 bg-linear-to-br from-purple-600 to-indigo-700" />
           <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -367,40 +367,45 @@ export default function HomePage() {
               transition={{ duration: 0.8 }}
               className="text-center"
             >
-              <h2 className="text-5xl md:text-7xl font-bold text-white mb-6 text-balance">CONTENT PRODUCTION</h2>
-              <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto text-balance mb-12">
+              <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 text-balance">CONTENT PRODUCTION</h2>
+              <p className="text-lg sm:text-xl md:text-2xl text-white/90 max-w-3xl mx-auto text-balance mb-8 md:mb-12">
                 Create engaging content to showcase your products and services
               </p>
-              <div className="grid md:grid-cols-3 gap-8 md:gap-12 text-left">
-                {
-                  [
-                    {
-                      icon: Lightbulb,
-                      title: "Video Production",
-                      description: "Create engaging videos to showcase your products",
-                      rotation: -8,
-                    },
-                    {
-                      icon: Camera,
-                      title: "Product Photography",
-                      description: "Create engaging product photography to showcase your products",
-                      rotation: 0,
-                    },
-                    {
-                      icon: Lightbulb,
-                      title: "Model and Influencer Shoots",
-                      description: "Create engaging model and influencer shoots to showcase your products",
-                      rotation: 8,
-                    },
-                  ]
-                  .map((service, index) => (
-                    <motion.div key={service.title} initial={{ opacity: 0, y: 50, rotate: 0 }} whileInView={{ opacity: 1, y: 0, rotate: service.rotation }} viewport={{ once: true }} transition={{ duration: 0.8, delay: index * 0.2 }} whileHover={{ scale: 1.05, rotate: 0 }} className="bg-white rounded-2xl p-8 shadow-2xl">
-                      <service.icon className="w-16 h-16 mb-6 text-[#F5A962]" />
-                      <h3 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
-                      <p className="text-gray-600 leading-relaxed text-lg">{service.description}</p>
-                    </motion.div>
-                  ))
-                }
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 lg:gap-12 text-left">
+                {[
+                  {
+                    icon: Lightbulb,
+                    title: "Video Production",
+                    description: "Create engaging videos to showcase your products",
+                    rotation: -8,
+                  },
+                  {
+                    icon: Camera,
+                    title: "Product Photography",
+                    description: "Create engaging product photography to showcase your products",
+                    rotation: 0,
+                  },
+                  {
+                    icon: Lightbulb,
+                    title: "Model and Influencer Shoots",
+                    description: "Create engaging model and influencer shoots to showcase your products",
+                    rotation: 8,
+                  },
+                ].map((service, index) => (
+                  <motion.div 
+                    key={service.title} 
+                    initial={{ opacity: 0, y: 50, rotate: 0 }} 
+                    whileInView={{ opacity: 1, y: 0, rotate: service.rotation }} 
+                    viewport={{ once: true }} 
+                    transition={{ duration: 0.8, delay: index * 0.2 }} 
+                    whileHover={{ scale: 1.05, rotate: 0 }} 
+                    className="bg-white rounded-2xl p-6 md:p-8 shadow-2xl"
+                  >
+                    <service.icon className="w-12 h-12 md:w-16 md:h-16 mb-4 md:mb-6 text-[#F5A962]" />
+                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 md:mb-4">{service.title}</h3>
+                    <p className="text-sm md:text-base lg:text-lg text-gray-600 leading-relaxed">{service.description}</p>
+                  </motion.div>
+                ))}
               </div>
             </motion.div>
           </div>
@@ -484,7 +489,7 @@ export default function HomePage() {
                 <motion.div
                   key={`${brand.name}-${index}`}
                   whileHover={{ scale: 1.1, y: -10 }}
-                  className="flex-shrink-0 w-64 h-32 rounded-xl border border-border bg-card flex items-center justify-center cursor-pointer transition-all duration-300 hover:border-primary/50 hover:shadow-lg"
+                  className="shrink-0 w-64 h-32 rounded-xl border border-border bg-card flex items-center justify-center cursor-pointer transition-all duration-300 hover:border-primary/50 hover:shadow-lg"
                   style={{
                     background: `linear-gradient(135deg, ${brand.color}15 0%, transparent 100%)`,
                   }}
@@ -518,7 +523,7 @@ export default function HomePage() {
                   <motion.div
                     key={`${brand.name}-reverse-${index}`}
                     whileHover={{ scale: 1.1, y: -10 }}
-                    className="flex-shrink-0 w-64 h-32 rounded-xl border border-border bg-card flex items-center justify-center cursor-pointer transition-all duration-300 hover:border-primary/50 hover:shadow-lg"
+                    className="shrink-0 w-64 h-32 rounded-xl border border-border bg-card flex items-center justify-center cursor-pointer transition-all duration-300 hover:border-primary/50 hover:shadow-lg"
                     style={{
                       background: `linear-gradient(135deg, ${brand.color}15 0%, transparent 100%)`,
                     }}
