@@ -395,8 +395,8 @@ export default function ServicesPage() {
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                     />
 
-                    {/* Hover overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    {/* Hover overlay - Always visible on mobile, hover on desktop */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                       <div className="text-white w-full">
                         <h4 className="font-bold text-xl mb-2 drop-shadow-lg">{portfolio.title}</h4>
                         <p className="text-sm text-gray-100 mb-3 leading-relaxed drop-shadow-md">

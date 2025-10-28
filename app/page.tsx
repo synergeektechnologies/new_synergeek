@@ -245,16 +245,16 @@ export default function HomePage() {
         {/* Red/Coral Section - Software Development */}
         <motion.section
           style={{ y: redSectionY }}
-          className="relative sm:sticky sm:top-0 min-h-screen flex items-center justify-center overflow-hidden"
+          className="relative sm:sticky sm:top-0 sm:min-h-screen flex items-center justify-center overflow-hidden"
         >
           <div className="absolute inset-0 bg-[#E53935]" />
-          <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
+          <div className="relative z-10 max-w-7xl mx-auto px-6 py-12 sm:py-20">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="text-center mb-16"
+              className="text-center mb-8 sm:mb-16"
             >
               <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 text-balance">DIGITAL EXCELLENCE</h2>
               <p className="text-lg sm:text-xl md:text-2xl text-white/90 max-w-3xl mx-auto text-balance">
@@ -303,16 +303,16 @@ export default function HomePage() {
 
         <motion.section
           style={{ y: orangeSectionY }}
-          className="relative sm:sticky sm:top-0 min-h-screen flex items-center justify-center overflow-hidden"
+          className="relative sm:sticky sm:top-0 sm:min-h-screen flex items-center justify-center overflow-hidden mt-[-30px] md:mt-0"
         >
           <div className="absolute inset-0 bg-[#F5A962]" />
-          <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
+          <div className="relative z-10 max-w-7xl mx-auto px-6 py-12 sm:py-20">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="text-center mb-16"
+              className="text-center mb-8 sm:mb-16"
             >
               <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 text-balance">EXPERT MARKETING</h2>
               <p className="text-lg sm:text-xl md:text-2xl text-white/90 max-w-3xl mx-auto text-balance">
@@ -356,10 +356,10 @@ export default function HomePage() {
         {/* Purple Section - Innovation */}
         <motion.section
           style={{ y: purpleSectionY }}
-          className="relative sm:sticky sm:top-0 min-h-screen flex items-center justify-center overflow-hidden"
+          className="relative sm:sticky sm:top-0 sm:min-h-screen flex items-center justify-center overflow-hidden mt-[-49px] md:mt-0"
         >
           <div className="absolute inset-0 bg-linear-to-br from-purple-600 to-indigo-700" />
-          <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
+          <div className="relative z-10 max-w-7xl mx-auto px-6 py-12 sm:py-20">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -368,7 +368,7 @@ export default function HomePage() {
               className="text-center"
             >
               <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 text-balance">CONTENT PRODUCTION</h2>
-              <p className="text-lg sm:text-xl md:text-2xl text-white/90 max-w-3xl mx-auto text-balance mb-8 md:mb-12">
+              <p className="text-lg sm:text-xl md:text-2xl text-white/90 max-w-3xl mx-auto text-balance mb-6 sm:mb-8 md:mb-12">
                 Create engaging content to showcase your products and services
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 lg:gap-12 text-left">
@@ -518,10 +518,10 @@ export default function HomePage() {
               }}
               className="flex gap-8"
             >
-              {[...brands.slice().reverse(), ...brands.slice().reverse(), ...brands.slice().reverse()].map(
+              {[...brands.slice(4), ...brands.slice(0, 4), ...brands.slice(4), ...brands.slice(0, 4), ...brands.slice(4), ...brands.slice(0, 4)].map(
                 (brand, index) => (
                   <motion.div
-                    key={`${brand.name}-reverse-${index}`}
+                    key={`${brand.name}-shuffled-${index}`}
                     whileHover={{ scale: 1.1, y: -10 }}
                     className="shrink-0 w-64 h-32 rounded-xl border border-border bg-card flex items-center justify-center cursor-pointer transition-all duration-300 hover:border-primary/50 hover:shadow-lg"
                     style={{
