@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     description: 'Synergeek is a Creative Marketing Agency specialized in Digital Marketing, Web Design & Development, Video Production, Branding, SEO, and E-commerce Solutions.',
     images: [
       {
-        url: '/synergeek-logo.png',
+        url: '/synergeek-og.png',
         width: 1200,
         height: 630,
         alt: 'Synergeek Technologies - Creative Marketing Agency',
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     creator: '@synergeek',
     title: 'Synergeek - Creative Marketing Agency | Digital Marketing & Web Development',
     description: 'Synergeek is a Creative Marketing Agency specialized in Digital Marketing, Web Design & Development, Video Production, Branding, SEO, and E-commerce Solutions.',
-    images: ['/synergeek-logo.png'],
+    images: ['/synergeek-og.png'],
   },
   alternates: {
     canonical: 'https://synergeektechnologies.in',
