@@ -1,7 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Space_Grotesk, Geist_Mono, Bebas_Neue, Roboto_Condensed } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
 import Script from "next/script"
 import "./globals.css"
 import { Navigation } from "@/components/navigation"
@@ -78,7 +77,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://synergeektechnologies.in',
   },
-  category: 'technology',
+  category: 'Creative Marketing Agency',
 }
 
 export default function RootLayout({
@@ -107,7 +106,6 @@ export default function RootLayout({
         <Navigation />
         {children}
         <Toaster />
-        <Analytics />
       </body>
     </html>
   )
