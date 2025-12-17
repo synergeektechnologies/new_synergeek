@@ -96,9 +96,9 @@ export default function HomePage() {
     "@type": "Organization",
     "name": "Synergeek Technologies",
     "description": "Creative Marketing Agency specialized in Digital Marketing, Web Design & Development, Video Production, Branding, SEO, and E-commerce Solutions",
-    "url": "https://synergeektechnologies.in",
-    "logo": "https://synergeektechnologies.in/synergeek-logo.png",
-    "image": "https://synergeektechnologies.in/synergeek-logo.png",
+    "url": "https://www.synergeek.in",
+    "logo": "https://www.synergeek.in/synergeek-logo.png",
+    "image": "https://www.synergeek.in/synergeek-logo.png",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "182, Subramanium road",
@@ -392,13 +392,13 @@ export default function HomePage() {
                     rotation: 8,
                   },
                 ].map((service, index) => (
-                  <motion.div 
-                    key={service.title} 
-                    initial={{ opacity: 0, y: 50, rotate: 0 }} 
-                    whileInView={{ opacity: 1, y: 0, rotate: service.rotation }} 
-                    viewport={{ once: true }} 
-                    transition={{ duration: 0.8, delay: index * 0.2 }} 
-                    whileHover={{ scale: 1.05, rotate: 0 }} 
+                  <motion.div
+                    key={service.title}
+                    initial={{ opacity: 0, y: 50, rotate: 0 }}
+                    whileInView={{ opacity: 1, y: 0, rotate: service.rotation }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: index * 0.2 }}
+                    whileHover={{ scale: 1.05, rotate: 0 }}
                     className="bg-white rounded-2xl p-6 md:p-8 shadow-2xl"
                   >
                     <service.icon className="w-12 h-12 md:w-16 md:h-16 mb-4 md:mb-6 text-[#F5A962]" />

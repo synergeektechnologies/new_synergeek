@@ -12,21 +12,21 @@ const bebasNeue = Bebas_Neue({ subsets: ["latin"], weight: "400" })
 const robotoCondensed = Roboto_Condensed({ subsets: ["latin"], weight: "300", variable: "--font-roboto-condensed" })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://synergeektechnologies.in'),
+  metadataBase: new URL('https://www.synergeek.in'),
   title: {
     default: "Synergeek - Creative Marketing Agency | Digital Marketing & Web Development",
     template: "%s | Synergeek Technologies"
   },
   description: "Synergeek is a Creative Marketing Agency specialized in Digital Marketing, Web Design & Development, Video Production, Branding, SEO, and E-commerce Solutions. Based in Coimbatore, India.",
   keywords: [
-    "Synergeek", 
-    "Creative Marketing Agency", 
-    "Digital Marketing", 
-    "Web Design", 
-    "Web Development", 
-    "Video Production", 
-    "Branding", 
-    "SEO", 
+    "Synergeek",
+    "Creative Marketing Agency",
+    "Digital Marketing",
+    "Web Design",
+    "Web Development",
+    "Video Production",
+    "Branding",
+    "SEO",
     "E-commerce Solutions",
     "Social Media Marketing",
     "Meta Ads",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     "Coimbatore",
     "India"
   ],
-  authors: [{ name: "Synergeek Technologies", url: "https://synergeektechnologies.in" }],
+  authors: [{ name: "Synergeek Technologies", url: "https://www.synergeek.in" }],
   creator: "Synergeek Technologies",
   publisher: "Synergeek Technologies",
   robots: {
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://synergeektechnologies.in',
+    url: 'https://www.synergeek.in',
     siteName: 'Synergeek Technologies',
     title: 'Synergeek - Creative Marketing Agency | Digital Marketing & Web Development',
     description: 'Synergeek is a Creative Marketing Agency specialized in Digital Marketing, Web Design & Development, Video Production, Branding, SEO, and E-commerce Solutions.',
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     images: ['/synergeek-og.png'],
   },
   alternates: {
-    canonical: 'https://synergeektechnologies.in',
+    canonical: 'https://www.synergeek.in',
   },
   category: 'Creative Marketing Agency',
 }

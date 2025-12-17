@@ -28,13 +28,13 @@ export default function ContactPage() {
     "@type": "ContactPage",
     "name": "Contact Synergeek Technologies",
     "description": "Contact Synergeek Technologies for Digital Marketing, Web Development, Branding, and Creative Services. Located in Coimbatore, India.",
-    "url": "https://synergeektechnologies.in/contact",
+    "url": "https://www.synergeek.in/contact",
     "mainEntity": {
       "@type": "Organization",
       "name": "Synergeek Technologies",
       "description": "Creative Marketing Agency specialized in Digital Marketing, Web Design & Development, Video Production, Branding, SEO, and E-commerce Solutions",
-      "url": "https://synergeektechnologies.in",
-      "logo": "https://synergeektechnologies.in/synergeek-logo.png",
+      "url": "https://www.synergeek.in",
+      "logo": "https://www.synergeek.in/synergeek-logo.png",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "182, Subramanium road",

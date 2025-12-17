@@ -17,8 +17,8 @@ export default function ServicesPage() {
     "provider": {
       "@type": "Organization",
       "name": "Synergeek Technologies",
-      "url": "https://synergeektechnologies.in",
-      "logo": "https://synergeektechnologies.in/synergeek-logo.png"
+      "url": "https://www.synergeek.in",
+      "logo": "https://www.synergeek.in/synergeek-logo.png"
     },
     "serviceType": "Digital Marketing Services",
     "areaServed": {
@@ -139,7 +139,7 @@ export default function ServicesPage() {
 
   const services = [
     "UI/UX Design",
-    "App Development", 
+    "App Development",
     "Web Design & Development",
     "Social Media Marketing",
     "Meta Ads & Google Ads",
@@ -344,21 +344,21 @@ export default function ServicesPage() {
             ].map((portfolio, index) => (
               <motion.div
                 key={index}
-                initial={{ 
-                  opacity: 0, 
+                initial={{
+                  opacity: 0,
                   y: -200,
                   scale: 0.8,
                   rotateX: -90
                 }}
-                whileInView={{ 
-                  opacity: 1, 
+                whileInView={{
+                  opacity: 1,
                   y: 0,
                   scale: 1,
                   rotateX: 0
                 }}
                 viewport={{ once: true, margin: "-100px" }}
-                transition={{ 
-                  duration: 0.8, 
+                transition={{
+                  duration: 0.8,
                   delay: index * 0.1,
                   type: "spring",
                   stiffness: 100,
@@ -366,7 +366,7 @@ export default function ServicesPage() {
                   mass: 0.8,
                   bounce: 0.3
                 }}
-                whileHover={{ 
+                whileHover={{
                   scale: 1.05,
                   y: -5,
                   transition: { duration: 0.3 }
@@ -374,16 +374,16 @@ export default function ServicesPage() {
                 className="break-inside-avoid mb-4 group cursor-pointer"
                 style={{ transformStyle: "preserve-3d" }}
               >
-                <motion.div 
+                <motion.div
                   className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900 shadow-2xl"
                   initial={{ boxShadow: "0 0 0 rgba(0,0,0,0)" }}
-                  whileInView={{ 
+                  whileInView={{
                     boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)",
                     transition: { duration: 0.8, delay: index * 0.1 }
                   }}
                 >
                   {/* Portfolio Image */}
-                  <div 
+                  <div
                     className="w-full relative overflow-hidden"
                     style={{ aspectRatio: portfolio.aspectRatio }}
                   >
@@ -404,7 +404,7 @@ export default function ServicesPage() {
                         </p>
                         <div className="flex gap-2 flex-wrap">
                           {portfolio.tags.map((tag, tagIndex) => (
-                            <span 
+                            <span
                               key={tagIndex}
                               className="px-3 py-1 bg-yellow-500 text-black text-xs font-bold rounded-full shadow-lg"
                             >
