@@ -88,7 +88,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Google Analytics */}
+        {/* Google Analytics & Google Ads Conversion ID: AW-16812402326 */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-F3078JXHG0"
           strategy="afterInteractive"
@@ -99,6 +99,10 @@ export default function RootLayout({
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-F3078JXHG0');
+            gtag('config', 'AW-16812402326/ftygCI3tsdYbEJbN49A-', {
+              'phone_conversion_number': '9677741597'
+            });
+            gtag('config', 'AW-16812402326');
           `}
         </Script>
       </head>
