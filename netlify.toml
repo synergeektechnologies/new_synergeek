@@ -4,3 +4,10 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+
+[[redirects]]
+  from = "/*"
+  to = "https://www.synergeek.in/:splat"
+  status = 301
+  force = true
+  conditions = { Host = ["synergeektechnologies.in", "www.synergeektechnologies.in"] }
