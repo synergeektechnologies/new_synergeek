@@ -78,6 +78,14 @@ export const metadata: Metadata = {
     canonical: 'https://www.synergeek.in',
   },
   category: 'Creative Marketing Agency',
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/synergeek-og.png', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: '/synergeek-logo.png',
+  },
 }
 
 export default function RootLayout({
