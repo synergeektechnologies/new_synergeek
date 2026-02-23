@@ -6,7 +6,8 @@
     "build": "next build",
     "dev": "next dev",
     "lint": "eslint .",
-    "start": "next start"
+    "start": "next start",
+    "generate:daily-post": "node scripts/generate_daily_post.js"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
