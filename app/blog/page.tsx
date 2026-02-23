@@ -11,7 +11,7 @@ export default function BlogIndexPage() {
   const posts = getAllPosts()
 
   return (
-    <main className="mx-auto w-full max-w-3xl px-4 py-12">
+    <main className="mx-auto w-full max-w-3xl px-4 pt-32 pb-12">
       <header className="mb-10">
         <h1 className="text-3xl font-semibold tracking-tight">Blog</h1>
         <p className="mt-2 text-sm text-muted-foreground">
