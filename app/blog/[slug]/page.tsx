@@ -42,7 +42,7 @@ export default async function BlogPostPage({
   const html = processed.toString()
 
   return (
-    <main className="mx-auto w-full max-w-3xl px-4 py-12">
+    <main className="mx-auto w-full max-w-3xl px-4 pt-32 pb-12">
       <div className="mb-8">
         <Link
           href="/blog"
