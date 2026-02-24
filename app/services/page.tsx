@@ -443,10 +443,10 @@ export default function ServicesPage() {
                   <Mail className="w-8 h-8 md:w-10 md:h-10 text-white group-hover:text-yellow-500 transition-colors" />
                 </motion.div>
                 <a
-                  href="mailto:company@synergeek.in"
+                  href="mailto:synergeektechnologies@gmail.com"
                   className="text-base md:text-lg hover:text-yellow-500 transition-colors"
                 >
-                  company@synergeek.in
+                  synergeektechnologies@gmail.com
                 </a>
               </motion.div>
 

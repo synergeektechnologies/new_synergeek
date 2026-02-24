@@ -124,7 +124,7 @@ export default function HomePage() {
       },
       {
         "@type": "ContactPoint",
-        "email": "company@synergeek.in",
+        "email": "synergeektechnologies@gmail.com",
         "contactType": "customer service",
         "areaServed": "IN",
         "availableLanguage": "English"
@@ -554,17 +554,17 @@ export default function HomePage() {
                 className="text-center"
               >
                 <motion.a
-                  href="mailto:company@synergeek.in"
+                  href="mailto:synergeektechnologies@gmail.com"
                   whileHover={{ scale: 1.1, y: -5 }}
                   className="inline-block"
                 >
                   <Mail className="w-10 h-10 mx-auto mb-4 text-white" strokeWidth={1.5} />
                 </motion.a>
                 <a
-                  href="mailto:company@synergeek.in"
+                  href="mailto:synergeektechnologies@gmail.com"
                   className="text-white hover:text-primary transition-colors text-sm md:text-base block"
                 >
-                  company@synergeek.in
+                  synergeektechnologies@gmail.com
                 </a>
               </motion.div>
 
