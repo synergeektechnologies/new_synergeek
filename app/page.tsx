@@ -95,7 +95,7 @@ export default function HomePage() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Synergeek Technologies",
-    "description": "Creative Marketing Agency specialized in Digital Marketing, Web Design & Development, Video Production, Branding, SEO, and E-commerce Solutions",
+    "description": "Synergeek Technologies is a technology and digital solutions company that helps businesses build, grow, and scale using modern software, digital strategies, and artificial intelligence.",
     "url": "https://www.synergeek.in",
     "logo": "https://www.synergeek.in/synergeek-logo.png",
     "image": "https://www.synergeek.in/synergeek-logo.png",
@@ -124,7 +124,7 @@ export default function HomePage() {
       },
       {
         "@type": "ContactPoint",
-        "email": "synergeektechnologies@gmail.com",
+        "email": "company@synergeek.in",
         "contactType": "customer service",
         "areaServed": "IN",
         "availableLanguage": "English"
@@ -137,7 +137,11 @@ export default function HomePage() {
     "founders": [
       {
         "@type": "Person",
-        "name": "Synergeek Technologies"
+        "name": "Sri Manikandan R"
+      },
+      {
+        "@type": "Person",
+        "name": "Sai Sidharthan H"
       }
     ],
     "serviceArea": {
@@ -234,7 +238,7 @@ export default function HomePage() {
             style={{ fontFamily: "var(--font-roboto-condensed)" }}
           >
             {
-              "We are a Creative Marketing Agency, specialized in Digital marketing, Web design and development, Video Production and Branding."
+              "Synergeek Technologies is a technology and digital solutions company that helps businesses build, grow, and scale using modern software, digital strategies, and artificial intelligence."
             }
           </motion.p>
         </div>
@@ -242,7 +246,7 @@ export default function HomePage() {
 
       {/* Services Section - Responsive Design */}
       <div ref={servicesRef} className="relative">
-        {/* Red/Coral Section - Software Development */}
+        {/* Software & Web Development Section */}
         <motion.section
           style={{ y: redSectionY }}
           className="relative sm:sticky sm:top-0 sm:min-h-screen flex items-center justify-center overflow-hidden"
@@ -256,30 +260,30 @@ export default function HomePage() {
               transition={{ duration: 0.8 }}
               className="text-center mb-8 sm:mb-16"
             >
-              <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 text-balance">DIGITAL EXCELLENCE</h2>
+              <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 text-balance">SOFTWARE & WEB DEVELOPMENT</h2>
               <p className="text-lg sm:text-xl md:text-2xl text-white/90 max-w-3xl mx-auto text-balance">
-                Transforming ideas into powerful digital solutions
+                Building scalable digital foundations for modern businesses
               </p>
             </motion.div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 lg:gap-12">
               {[
                 {
-                  icon: PenTool,
-                  title: "UI/UX Design",
-                  description: "Create engaging and user-friendly interfaces for your products and services",
+                  icon: Code,
+                  title: "Custom Software",
+                  description: "Tailored software solutions designed to solve your specific business challenges",
                   rotation: -8,
                 },
                 {
-                  icon: Code,
-                  title: "App Development",
-                  description: "Custom mobile applications to showcase your products and services",
+                  icon: Globe,
+                  title: "Web Applications",
+                  description: "High-performance web applications built with modern frameworks and scalable architecture",
                   rotation: 0,
                 },
                 {
-                  icon: Globe,
-                  title: "Web Design & Development",
-                  description: "Create stunning and responsive websites to showcase your products and services",
+                  icon: Rocket,
+                  title: "Mobile Apps",
+                  description: "Native and cross-platform mobile applications that provide seamless user experiences",
                   rotation: 8,
                 },
               ].map((service, index) => (
@@ -301,6 +305,7 @@ export default function HomePage() {
           </div>
         </motion.section>
 
+        {/* Digital Marketing Section */}
         <motion.section
           style={{ y: orangeSectionY }}
           className="relative sm:sticky sm:top-0 sm:min-h-screen flex items-center justify-center overflow-hidden mt-[-30px] md:mt-0"
@@ -314,9 +319,9 @@ export default function HomePage() {
               transition={{ duration: 0.8 }}
               className="text-center mb-8 sm:mb-16"
             >
-              <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 text-balance">EXPERT MARKETING</h2>
+              <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 text-balance">DIGITAL MARKETING</h2>
               <p className="text-lg sm:text-xl md:text-2xl text-white/90 max-w-3xl mx-auto text-balance">
-                Expert marketing strategies to grow your business
+                Strategic marketing that accelerates your business growth
               </p>
             </motion.div>
 
@@ -324,14 +329,14 @@ export default function HomePage() {
               {[
                 {
                   icon: Share2,
-                  title: "Social Media Marketing",
-                  description: "Grow your brand on social media with targeted campaigns",
+                  title: "Social Media & Content",
+                  description: "Grow your brand presence with targeted campaigns and engaging storytelling content",
                   rotation: -6,
                 },
                 {
-                  icon: Rocket,
-                  title: "Meta Ads & Google Ads",
-                  description: "Create targeted ads to reach your audience and drive conversions",
+                  icon: TrendingUp,
+                  title: "Paid Ads & Lead Gen",
+                  description: "Drive high-intent traffic and conversions through optimized Meta and Google ad campaigns",
                   rotation: 6,
                 },
               ].map((service, index) => (
@@ -353,12 +358,12 @@ export default function HomePage() {
           </div>
         </motion.section>
 
-        {/* Purple Section - Innovation */}
+        {/* AI Solutions Section */}
         <motion.section
           style={{ y: purpleSectionY }}
           className="relative sm:sticky sm:top-0 sm:min-h-screen flex items-center justify-center overflow-hidden mt-[-49px] md:mt-0"
         >
-          <div className="absolute inset-0 bg-linear-to-br from-purple-600 to-indigo-700" />
+          <div className="absolute inset-0 bg-linear-to-br from-indigo-600 to-purple-700" />
           <div className="relative z-10 max-w-7xl mx-auto px-6 py-12 sm:py-20">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -367,28 +372,28 @@ export default function HomePage() {
               transition={{ duration: 0.8 }}
               className="text-center"
             >
-              <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 text-balance">CONTENT PRODUCTION</h2>
+              <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 text-balance">AI SOLUTIONS</h2>
               <p className="text-lg sm:text-xl md:text-2xl text-white/90 max-w-3xl mx-auto text-balance mb-6 sm:mb-8 md:mb-12">
-                Create engaging content to showcase your products and services
+                Empowering businesses with intelligent autonomous systems
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 lg:gap-12 text-left">
                 {[
                   {
-                    icon: Lightbulb,
-                    title: "Video Production",
-                    description: "Create engaging videos to showcase your products",
+                    icon: Webhook,
+                    title: "Agentic AI Systems",
+                    description: "Autonomous AI agents that can execute complex workflows and automate business operations",
                     rotation: -8,
                   },
                   {
-                    icon: Camera,
-                    title: "Product Photography",
-                    description: "Create engaging product photography to showcase your products",
+                    icon: Lightbulb,
+                    title: "Intelligent Chatbots",
+                    description: "Advanced AI-powered conversational systems for enhanced customer engagement and support",
                     rotation: 0,
                   },
                   {
-                    icon: Lightbulb,
-                    title: "Model and Influencer Shoots",
-                    description: "Create engaging model and influencer shoots to showcase your products",
+                    icon: Database,
+                    title: "Generative AI",
+                    description: "Custom Generative AI solutions for content creation, data analysis, and creative automation",
                     rotation: 8,
                   },
                 ].map((service, index) => (
@@ -401,7 +406,7 @@ export default function HomePage() {
                     whileHover={{ scale: 1.05, rotate: 0 }}
                     className="bg-white rounded-2xl p-6 md:p-8 shadow-2xl"
                   >
-                    <service.icon className="w-12 h-12 md:w-16 md:h-16 mb-4 md:mb-6 text-[#F5A962]" />
+                    <service.icon className="w-12 h-12 md:w-16 md:h-16 mb-4 md:mb-6 text-indigo-600" />
                     <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 md:mb-4">{service.title}</h3>
                     <p className="text-sm md:text-base lg:text-lg text-gray-600 leading-relaxed">{service.description}</p>
                   </motion.div>
@@ -426,14 +431,14 @@ export default function HomePage() {
 
         <div className="space-y-8 md:space-y-12">
           {[
-            "SOCIAL MEDIA MANAGEMENT",
-            "DIGITAL MEDIA MARKETING",
-            "BRANDING",
-            "CONTENT PRODUCTION",
-            "AD CAMPAIGNS",
-            "SEARCH ENGINE OPTIMIZATION",
+            "AGENTIC AI SOLUTIONS",
+            "CUSTOM SOFTWARE DEVELOPMENT",
+            "AI CHATBOT SOLUTIONS",
             "WEB DESIGN & DEVELOPMENT",
-            "ECOMMERCE SOLUTIONS",
+            "MOBILE APP DEVELOPMENT",
+            "DIGITAL MARKETING",
+            "BUSINESS AUTOMATION",
+            "BRANDING & CREATIVE",
           ].map((skill, index) => (
             <motion.h3
               key={skill}
@@ -539,6 +544,36 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Mission & Vision Section */}
+      <section className="py-32 px-6 bg-black text-white overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-16 md:gap-24">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-6xl md:text-8xl font-bold mb-12 tracking-[0.05em]" style={{ fontFamily: "var(--font-condensed)" }}>MISSION</h2>
+              <p className="text-xl md:text-2xl text-white/80 leading-relaxed leading-relaxed">
+                To empower businesses with innovative technology and AI-driven solutions that improve efficiency, visibility, and long-term growth.
+              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <h2 className="text-6xl md:text-8xl font-bold mb-12 tracking-[0.05em]" style={{ fontFamily: "var(--font-condensed)" }}>VISION</h2>
+              <p className="text-xl md:text-2xl text-white/80 leading-relaxed leading-relaxed">
+                To become a trusted global technology partner delivering scalable software, digital solutions, and intelligent AI systems for modern businesses.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-black text-white relative z-20">
         {/* Upper Tier - Contact Information */}
@@ -554,17 +589,17 @@ export default function HomePage() {
                 className="text-center"
               >
                 <motion.a
-                  href="mailto:synergeektechnologies@gmail.com"
+                  href="mailto:company@synergeek.in"
                   whileHover={{ scale: 1.1, y: -5 }}
                   className="inline-block"
                 >
                   <Mail className="w-10 h-10 mx-auto mb-4 text-white" strokeWidth={1.5} />
                 </motion.a>
                 <a
-                  href="mailto:synergeektechnologies@gmail.com"
+                  href="mailto:company@synergeek.in"
                   className="text-white hover:text-primary transition-colors text-sm md:text-base block"
                 >
-                  synergeektechnologies@gmail.com
+                  company@synergeek.in
                 </a>
               </motion.div>
 

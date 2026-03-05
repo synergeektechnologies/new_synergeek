@@ -60,7 +60,7 @@ export default function ContactPage() {
         },
         {
           "@type": "ContactPoint",
-          "email": "synergeektechnologies@gmail.com",
+          "email": "company@synergeek.in",
           "contactType": "customer service",
           "areaServed": "IN",
           "availableLanguage": "English"
@@ -126,7 +126,7 @@ export default function ContactPage() {
       console.error('EmailJS Error:', error)
       toast({
         title: "Failed to Send Message",
-        description: "Please try again or contact us directly at synergeektechnologies@gmail.com",
+        description: "Please try again or contact us directly at company@synergeek.in",
         variant: "destructive",
       })
     } finally {
@@ -325,17 +325,17 @@ export default function ContactPage() {
                 className="text-center"
               >
                 <motion.a
-                  href="mailto:synergeektechnologies@gmail.com"
+                  href="mailto:company@synergeek.in"
                   whileHover={{ scale: 1.1, y: -5 }}
                   className="inline-block"
                 >
                   <Mail className="w-10 h-10 mx-auto mb-4 text-white" strokeWidth={1.5} />
                 </motion.a>
                 <a
-                  href="mailto:synergeektechnologies@gmail.com"
+                  href="mailto:company@synergeek.in"
                   className="text-white hover:text-primary transition-colors text-sm md:text-base block"
                 >
-                  synergeektechnologies@gmail.com
+                  company@synergeek.in
                 </a>
               </motion.div>
 

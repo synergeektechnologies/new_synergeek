@@ -12,125 +12,69 @@ export default function ServicesPage() {
   const servicesStructuredData = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Digital Marketing & Creative Services",
-    "description": "Comprehensive digital marketing and creative services including web development, branding, video production, and SEO",
+    "name": "Synergeek Technologies - Software & AI Solutions",
+    "description": "Synergeek Technologies is a technology and digital solutions company that helps businesses build, grow, and scale using modern software, digital strategies, and artificial intelligence.",
     "provider": {
       "@type": "Organization",
       "name": "Synergeek Technologies",
       "url": "https://www.synergeek.in",
       "logo": "https://www.synergeek.in/synergeek-logo.png"
     },
-    "serviceType": "Digital Marketing Services",
+    "serviceType": "Technology & AI Solutions",
     "areaServed": {
       "@type": "Country",
       "name": "India"
     },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Digital Marketing Services",
+      "name": "Core Services",
       "itemListElement": [
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "UI/UX Design",
-            "description": "Create engaging and user-friendly interfaces for your products and services"
+            "name": "Custom Software Development",
+            "description": "Tailored software solutions to solve real business problems and improve operational efficiency"
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "App Development",
-            "description": "Custom mobile applications to showcase your products and services"
+            "name": "Web & Mobile Application Development",
+            "description": "Modern web and mobile applications built with latest technologies"
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Web Design & Development",
-            "description": "Create stunning and responsive websites to showcase your products and services"
+            "name": "Agentic AI Systems",
+            "description": "Autonomous AI solutions for workflow automation and efficiency"
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Social Media Marketing",
-            "description": "Grow your brand on social media with targeted campaigns"
+            "name": "AI Chatbot Solutions",
+            "description": "Intelligent chatbots for customer engagement and support"
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Meta Ads & Google Ads",
-            "description": "Create targeted ads to reach your audience and drive conversions"
+            "name": "Digital Marketing & Branding",
+            "description": "Comprehensive digital strategies, social media marketing, and brand identity development"
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Video Production",
-            "description": "Create engaging videos to showcase your products"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Product Photography",
-            "description": "Create engaging product photography to showcase your products"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Model and Influencer Shoots",
-            "description": "Create engaging model and influencer shoots to showcase your products"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Branding",
-            "description": "Complete branding solutions for your business"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Content Production",
-            "description": "Create engaging content to showcase your products and services"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Ad Campaigns",
-            "description": "Strategic advertising campaigns to grow your business"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Search Engine Optimization",
-            "description": "Improve your website's visibility in search engine results"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "E-commerce Solutions",
-            "description": "Complete e-commerce platform development and optimization"
+            "name": "Business Automation",
+            "description": "Automate workflows and scale operations using software and AI"
           }
         }
       ]
@@ -138,19 +82,16 @@ export default function ServicesPage() {
   }
 
   const services = [
-    "UI/UX Design",
-    "App Development",
-    "Web Design & Development",
+    "Custom Software Development",
+    "Web Application Development",
+    "Mobile Application Development",
+    "Agentic AI Solutions",
+    "AI Chatbot Solutions",
+    "Business Automation Systems",
+    "Digital Marketing Strategies",
     "Social Media Marketing",
-    "Meta Ads & Google Ads",
-    "Video Production",
-    "Product Photography",
-    "Model and Influencer Shoots",
-    "Branding",
-    "Content Production",
-    "Ad Campaigns",
-    "Search Engine Optimization",
-    "E-commerce Solutions",
+    "Branding & Creative Design",
+    "Website Hosting & Maintenance",
   ]
 
   const scrollToTop = () => {
@@ -202,7 +143,7 @@ export default function ServicesPage() {
             className="text-md md:text-lg mt-[-30px] lg:text-xl text-muted-foreground max-w-4xl mx-auto mb-12 leading-relaxed text-balance"
             style={{ fontFamily: "var(--font-roboto-condensed)" }}
           >
-            We are a Creative Marketing Agency, specialized in Digital marketing, Web design and development, Video Production and Branding.
+            Synergeek Technologies is a technology and digital solutions company that helps businesses build, grow, and scale using modern software, digital strategies, and artificial intelligence.
           </motion.p>
         </div>
       </section>
@@ -443,10 +384,10 @@ export default function ServicesPage() {
                   <Mail className="w-8 h-8 md:w-10 md:h-10 text-white group-hover:text-yellow-500 transition-colors" />
                 </motion.div>
                 <a
-                  href="mailto:synergeektechnologies@gmail.com"
+                  href="mailto:company@synergeek.in"
                   className="text-base md:text-lg hover:text-yellow-500 transition-colors"
                 >
-                  synergeektechnologies@gmail.com
+                  company@synergeek.in
                 </a>
               </motion.div>
 
