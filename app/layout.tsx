@@ -97,6 +97,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="facebook-domain-verification" content="cfhzzbdcpl610u3v3qsdk9pzox2vss" />
         {/* Google Analytics & Google Ads Conversion ID: AW-16812402326 */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-F3078JXHG0"
