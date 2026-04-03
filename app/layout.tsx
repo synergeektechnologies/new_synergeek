@@ -3,6 +3,9 @@ import type { Metadata } from "next"
 import { Space_Grotesk, Geist_Mono, Bebas_Neue, Roboto_Condensed } from "next/font/google"
 import Script from "next/script"
 import "./globals.css"
+import { VisualEditing } from "next-sanity/visual-editing"
+import { draftMode } from "next/headers"
+import { SanityLive } from "@/sanity/lib/live"
 import { Navigation } from "@/components/navigation"
 import { Toaster } from "@/components/ui/toaster"
 
@@ -89,11 +92,12 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const isDraftMode = (await draftMode()).isEnabled
   return (
     <html lang="en">
       <head>
@@ -120,6 +124,8 @@ export default function RootLayout({
         <Navigation />
         {children}
         <Toaster />
+        {isDraftMode && <VisualEditing />}
+        <SanityLive />
       </body>
     </html>
   )

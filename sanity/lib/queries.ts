@@ -1,0 +1,79 @@
+import { defineQuery } from 'next-sanity'
+
+export const postsQuery = defineQuery(
+  `*[_type == "post"] | order(date desc) {
+    _id,
+    title,
+    "slug": slug.current,
+    date,
+    excerpt,
+    coverImage,
+    categories
+  }`
+)
+
+export const postBySlugQuery = defineQuery(
+  `*[_type == "post" && slug.current == $slug][0] {
+    _id,
+    title,
+    "slug": slug.current,
+    date,
+    excerpt,
+    coverImage,
+    categories,
+    body
+  }`
+)
+
+export const postSlugsQuery = defineQuery(
+  `*[_type == "post"] { "slug": slug.current }`
+)
+
+export const servicesQuery = defineQuery(
+  `*[_type == "service"] | order(order asc) {
+    _id,
+    title,
+    description,
+    icon,
+    section,
+    order
+  }`
+)
+
+export const portfolioQuery = defineQuery(
+  `*[_type == "portfolio"] | order(order asc) {
+    _id,
+    title,
+    description,
+    image,
+    tags,
+    aspectRatio,
+    order
+  }`
+)
+
+export const brandsQuery = defineQuery(
+  `*[_type == "brand"] | order(order asc) {
+    _id,
+    name,
+    color,
+    order
+  }`
+)
+
+export const siteSettingsQuery = defineQuery(
+  `*[_type == "siteSettings"][0] {
+    _id,
+    orgName,
+    companyDescription,
+    mission,
+    vision,
+    contactEmail,
+    phone1,
+    phone2,
+    address,
+    instagramUrl,
+    logo,
+    ogImage
+  }`
+)

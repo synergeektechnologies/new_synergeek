@@ -1,14 +1,18 @@
 import Link from "next/link"
 import { format, parseISO } from "date-fns"
-import { getAllPosts } from "@/lib/blog"
+import { sanityFetch } from "@/sanity/lib/live"
+import { postsQuery } from "@/sanity/lib/queries"
 
 export const metadata = {
   title: "Blog",
   description: "Insights and guides from Synergeek.",
 }
 
-export default function BlogIndexPage() {
-  const posts = getAllPosts()
+export default async function BlogIndexPage() {
+  const { data: posts } = await sanityFetch({
+    query: postsQuery,
+    tags: ['posts'],
+  })
 
   return (
     <main className="mx-auto w-full max-w-3xl px-4 pt-32 pb-12">
@@ -20,12 +24,12 @@ export default function BlogIndexPage() {
       </header>
 
       <section className="space-y-6">
-        {posts.length === 0 ? (
+        {!posts || posts.length === 0 ? (
           <p className="text-sm text-muted-foreground">No posts yet.</p>
         ) : (
-          posts.map((post) => (
+          posts.map((post: any) => (
             <article
-              key={post.slug}
+              key={post._id}
               className="rounded-xl border border-border/60 bg-card/40 p-5"
             >
               <div className="flex flex-col gap-2">

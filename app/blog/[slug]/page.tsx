@@ -1,26 +1,30 @@
 import { notFound } from "next/navigation"
 import { format, parseISO } from "date-fns"
-import { remark } from "remark"
-import remarkHtml from "remark-html"
 import Link from "next/link"
-
-import { getAllPostSlugs, getPostBySlug } from "@/lib/blog"
+import { sanityFetch } from "@/sanity/lib/live"
+import { client } from "@/sanity/lib/client"
+import { postBySlugQuery, postSlugsQuery } from "@/sanity/lib/queries"
+import { PortableText } from "@/components/portable-text"
+import { SanityImage } from "@/components/sanity-image"
 
 export async function generateStaticParams() {
-  return getAllPostSlugs().map((slug) => ({ slug }))
+  const posts = await client.fetch(`*[_type == "post"]{ "slug": slug.current }`)
+  return (posts ?? []).map((post: any) => ({ slug: post.slug }))
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
+  const { data: post } = await sanityFetch({
+    query: postBySlugQuery,
+    params: { slug },
+    tags: ['posts'],
+  })
 
-  try {
-    const { meta } = getPostBySlug(slug)
-    return {
-      title: meta.title,
-      description: meta.excerpt,
-    }
-  } catch {
-    return { title: "Post not found" }
+  if (!post) return { title: "Post not found" }
+
+  return {
+    title: post.title,
+    description: post.excerpt,
   }
 }
 
@@ -31,15 +35,13 @@ export default async function BlogPostPage({
 }) {
   const { slug } = await params
 
-  let post
-  try {
-    post = getPostBySlug(slug)
-  } catch {
-    notFound()
-  }
+  const { data: post } = await sanityFetch({
+    query: postBySlugQuery,
+    params: { slug },
+    tags: ['posts'],
+  })
 
-  const processed = await remark().use(remarkHtml).process(post.content)
-  const html = processed.toString()
+  if (!post) notFound()
 
   return (
     <main className="mx-auto w-full max-w-3xl px-4 pt-32 pb-12">
@@ -54,17 +56,28 @@ export default async function BlogPostPage({
 
       <article>
         <header className="mb-8">
-          <h1 className="text-3xl font-semibold tracking-tight">{post.meta.title}</h1>
+          <h1 className="text-3xl font-semibold tracking-tight">{post.title}</h1>
           <div className="mt-3 text-sm text-muted-foreground">
-            {format(parseISO(post.meta.date), "MMM d, yyyy")}
+            {format(parseISO(post.date), "MMM d, yyyy")}
           </div>
         </header>
 
-        <div
-          className="blog-content"
-          // markdown is authored in-repo (trusted)
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
+        {post.coverImage && (
+          <div className="mb-8 relative aspect-video rounded-lg overflow-hidden">
+            <SanityImage
+              source={post.coverImage}
+              alt={post.coverImage.alt || post.title}
+              fill
+              sizes="(max-width: 768px) 100vw, 768px"
+              className="object-cover"
+              priority
+            />
+          </div>
+        )}
+
+        <div className="blog-content">
+          <PortableText value={post.body} />
+        </div>
       </article>
     </main>
   )
