@@ -252,7 +252,7 @@ export function ServicesPage({ services, portfolio, settings }: ServicesPageProp
                           {item.description}
                         </p>
                         <div className="flex gap-2 flex-wrap">
-                          {item.tags.map((tag, tagIndex) => (
+                          {(item.tags ?? []).map((tag, tagIndex) => (
                             <span
                               key={tagIndex}
                               className="px-3 py-1 bg-yellow-500 text-black text-xs font-bold rounded-full shadow-lg"
