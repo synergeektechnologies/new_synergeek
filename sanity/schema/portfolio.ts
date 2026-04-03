@@ -49,6 +49,7 @@ export const portfolioType = defineType({
           { title: '4:3', value: '4/3' },
           { title: '3:2', value: '3/2' },
           { title: '4:5', value: '4/5' },
+          { title: '9:16', value: '9/16' },
           { title: '9:12', value: '9/12' },
           { title: '18:9', value: '18/9' },
         ],
