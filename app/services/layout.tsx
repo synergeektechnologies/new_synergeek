@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Our Services - Digital Marketing, Web Development & Branding | Synergeek",
     description: "Explore Synergeek's comprehensive services including Digital Marketing, Web Design & Development, Video Production, Branding, SEO, Social Media Marketing, Meta Ads, Google Ads, UI/UX Design, and E-commerce Solutions.",
-    url: "https://synergeektechnologies.in/services",
+    url: "https://www.synergeek.in/services",
     images: [
       {
         url: "/synergeek-logo.png",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     images: ["/synergeek-logo.png"],
   },
   alternates: {
-    canonical: "https://synergeektechnologies.in/services",
+    canonical: "https://www.synergeek.in/services",
   },
 }
 

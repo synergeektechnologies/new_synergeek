@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: '/private/',
+      disallow: ['/private/', '/api/', '/studio/'],
     },
     sitemap: 'https://www.synergeek.in/sitemap.xml',
   }

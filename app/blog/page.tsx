@@ -3,9 +3,41 @@ import { format, parseISO } from "date-fns"
 import { sanityFetch } from "@/sanity/lib/live"
 import { postsQuery } from "@/sanity/lib/queries"
 
-export const metadata = {
-  title: "Blog",
-  description: "Insights and guides from Synergeek.",
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Blog - Insights & Guides for Builders",
+  description: "Practical UI/UX, engineering, and product notes from Synergeek Technologies. Tips on web development, digital marketing, branding, and AI-powered solutions.",
+  keywords: [
+    "Synergeek Blog",
+    "Web Development Blog",
+    "Digital Marketing Insights",
+    "UI/UX Design Tips",
+    "Branding Guides",
+    "AI Solutions Blog",
+  ],
+  openGraph: {
+    title: "Blog - Insights & Guides for Builders | Synergeek",
+    description: "Practical UI/UX, engineering, and product notes from Synergeek Technologies.",
+    url: "https://www.synergeek.in/blog",
+    images: [
+      {
+        url: "/synergeek-og.png",
+        width: 1200,
+        height: 630,
+        alt: "Synergeek Blog - Insights & Guides",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog - Insights & Guides for Builders | Synergeek",
+    description: "Practical UI/UX, engineering, and product notes from Synergeek Technologies.",
+    images: ["/synergeek-og.png"],
+  },
+  alternates: {
+    canonical: "https://www.synergeek.in/blog",
+  },
 }
 
 export default async function BlogIndexPage() {

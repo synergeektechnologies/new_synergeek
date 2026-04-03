@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Contact Us - Get Your Project Started | Synergeek Technologies",
     description: "Contact Synergeek Technologies for Digital Marketing, Web Development, Branding, and Creative Services. Located in Coimbatore, India. Get a free consultation for your project.",
-    url: "https://synergeektechnologies.in/contact",
+    url: "https://www.synergeek.in/contact",
     images: [
       {
         url: "/synergeek-logo.png",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     images: ["/synergeek-logo.png"],
   },
   alternates: {
-    canonical: "https://synergeektechnologies.in/contact",
+    canonical: "https://www.synergeek.in/contact",
   },
 }
 

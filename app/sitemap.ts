@@ -1,8 +1,24 @@
 import { MetadataRoute } from 'next'
+import { client } from '@/sanity/lib/client'
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://www.synergeek.in'
-  
+
+  let blogEntries: MetadataRoute.Sitemap = []
+  try {
+    const posts = await client.fetch<{ slug: string; date: string }[]>(
+      `*[_type == "post"]{ "slug": slug.current, date }`
+    )
+    blogEntries = (posts ?? []).map((post) => ({
+      url: `${baseUrl}/blog/${post.slug}`,
+      lastModified: new Date(post.date),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    }))
+  } catch (error) {
+    console.error('Sitemap: Failed to fetch blog posts from Sanity', error)
+  }
+
   return [
     {
       url: baseUrl,
@@ -17,10 +33,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/blog`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/contact`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
+    ...blogEntries,
   ]
 }
