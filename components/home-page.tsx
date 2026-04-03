@@ -204,19 +204,12 @@ export function HomePage({ services, brands, settings }: HomePageProps) {
         className="relative min-h-screen flex items-center justify-center px-6 pt-20"
       >
         <div className="max-w-7xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
+          <div className="animate-hero-fade-up">
             <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter mb-8">
               <span className="inline-flex text-balance">
                 {letters.map((letter, index) => (
                   <motion.span
                     key={index}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 1, delay: 0.3 + index * 0.05 }}
                     whileHover={{
                       scale: 1.2,
                       transition: { duration: 0.3 },
@@ -228,16 +221,13 @@ export function HomePage({ services, brands, settings }: HomePageProps) {
                 ))}
               </span>
             </h1>
-          </motion.div>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="text-md mt-[-30px] md:text-lg lg:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed text-balance"
+          </div>
+          <p
+            className="animate-hero-fade-up-delay text-md mt-[-30px] md:text-lg lg:text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed text-balance"
             style={{ fontFamily: "var(--font-roboto-condensed)" }}
           >
             {settings.companyDescription}
-          </motion.p>
+          </p>
         </div>
       </motion.section>
 

@@ -21,11 +21,8 @@ export function Navigation() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   return (
-    <motion.nav
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className="fixed top-0 left-0 right-0 z-50 bg-transparent"
+    <nav
+      className="fixed top-0 left-0 right-0 z-50 bg-transparent animate-nav-slide-down"
     >
       <div className="max-w-7xl mx-auto px-8 lg:px-12">
         <div className="flex items-center justify-between h-28">
@@ -35,8 +32,9 @@ export function Navigation() {
               <Image
                 src="/synergeek-logo.png"
                 alt="Synergeek"
-                width={240}
-                height={80}
+                width={200}
+                height={67}
+                sizes="200px"
                 className="h-16 w-auto object-contain"
                 priority
               />
@@ -148,6 +146,6 @@ export function Navigation() {
           </div>
         </motion.div>
       )}
-    </motion.nav>
+    </nav>
   )
 }

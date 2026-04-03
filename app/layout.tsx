@@ -105,9 +105,9 @@ export default async function RootLayout({
         {/* Google Analytics & Google Ads Conversion ID: AW-16812402326 */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-F3078JXHG0"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}

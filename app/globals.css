@@ -1,6 +1,42 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* Performance: CSS animations for hero LCP elements (avoids JS render-blocking) */
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes nav-slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-hero-fade-up {
+  animation: hero-fade-up 0.8s ease-out forwards;
+}
+
+.animate-hero-fade-up-delay {
+  animation: hero-fade-up 0.8s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+.animate-nav-slide-down {
+  animation: nav-slide-down 0.6s ease-out forwards;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 :root {
