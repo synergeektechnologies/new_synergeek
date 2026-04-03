@@ -11,6 +11,11 @@ import {
   Camera,
   PenTool,
   Rocket,
+  Smartphone,
+  Bot,
+  MessageSquare,
+  Cog,
+  Server,
   type LucideIcon,
 } from 'lucide-react'
 
@@ -27,6 +32,11 @@ const iconMap: Record<string, LucideIcon> = {
   Camera,
   PenTool,
   Rocket,
+  Smartphone,
+  Bot,
+  MessageSquare,
+  Cog,
+  Server,
 }
 
 export function getIcon(name: string): LucideIcon {

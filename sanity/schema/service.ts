@@ -23,7 +23,6 @@ export const serviceType = defineType({
       title: 'Icon',
       type: 'string',
       description: 'Lucide icon key (e.g., "Code", "Globe", "Rocket", "Share2", "TrendingUp", "Webhook", "Lightbulb", "Database")',
-      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'section',
@@ -35,9 +34,8 @@ export const serviceType = defineType({
           { title: 'Digital Marketing', value: 'marketing' },
           { title: 'AI Solutions', value: 'ai' },
         ],
-        layout: 'radio',
+        layout: 'dropdown',
       },
-      validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'order',
