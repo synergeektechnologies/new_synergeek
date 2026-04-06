@@ -3,7 +3,7 @@ import { format, parseISO } from "date-fns"
 import Link from "next/link"
 import { sanityFetch } from "@/sanity/lib/live"
 import { client } from "@/sanity/lib/client"
-import { postBySlugQuery, postSlugsQuery } from "@/sanity/lib/queries"
+import { postBySlugQuery, postSlugsQuery, relatedPostsQuery, adjacentPostsQuery } from "@/sanity/lib/queries"
 import { PortableText } from "@/components/portable-text"
 import { SanityImage } from "@/components/sanity-image"
 import { StructuredData } from "@/components/structured-data"
@@ -78,6 +78,19 @@ export default async function BlogPostPage({
   })
 
   if (!post) notFound()
+
+  const [{ data: relatedPosts }, { data: adjacentPosts }] = await Promise.all([
+    sanityFetch({
+      query: relatedPostsQuery,
+      params: { slug, categories: post.categories ?? [] },
+      tags: ['posts'],
+    }),
+    sanityFetch({
+      query: adjacentPostsQuery,
+      params: { date: post.date },
+      tags: ['posts'],
+    }),
+  ])
 
   const ogImage = post.coverImage?.asset
     ? urlFor(post.coverImage).width(1200).height(630).auto('format').quality(80).url()
@@ -181,7 +194,78 @@ export default async function BlogPostPage({
         <div className="blog-content">
           <PortableText value={post.body} />
         </div>
+
+        {post.categories && post.categories.length > 0 && (
+          <footer className="mt-10 pt-6 border-t border-border/60">
+            <div className="flex flex-wrap gap-2">
+              {post.categories.map((category: string) => (
+                <span
+                  key={category}
+                  className="rounded-full bg-muted px-3 py-1 text-xs text-muted-foreground"
+                >
+                  {category}
+                </span>
+              ))}
+            </div>
+          </footer>
+        )}
       </article>
+
+      {relatedPosts && relatedPosts.length > 0 && (
+        <section className="mt-16 pt-10 border-t border-border/60">
+          <h2 className="text-xl font-semibold tracking-tight mb-6">Related Articles</h2>
+          <div className="space-y-4">
+            {relatedPosts.map((related: any) => (
+              <article
+                key={related._id}
+                className="rounded-xl border border-border/60 bg-card/40 p-5"
+              >
+                <div className="text-xs text-muted-foreground mb-1">
+                  {format(parseISO(related.date), "MMM d, yyyy")}
+                </div>
+                <h3 className="text-lg font-semibold leading-snug">
+                  <Link
+                    href={`/blog/${related.slug}`}
+                    className="hover:underline underline-offset-4"
+                  >
+                    {related.title}
+                  </Link>
+                </h3>
+                <p className="mt-1 text-sm text-muted-foreground line-clamp-2">{related.excerpt}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {(adjacentPosts?.prev || adjacentPosts?.next) && (
+        <nav className="mt-12 pt-8 border-t border-border/60 grid grid-cols-2 gap-4">
+          {adjacentPosts.prev ? (
+            <Link
+              href={`/blog/${adjacentPosts.prev.slug}`}
+              className="group text-left"
+            >
+              <span className="text-xs text-muted-foreground">← Previous</span>
+              <p className="text-sm font-medium group-hover:underline underline-offset-4 line-clamp-2">
+                {adjacentPosts.prev.title}
+              </p>
+            </Link>
+          ) : (
+            <div />
+          )}
+          {adjacentPosts.next && (
+            <Link
+              href={`/blog/${adjacentPosts.next.slug}`}
+              className="group text-right"
+            >
+              <span className="text-xs text-muted-foreground">Next →</span>
+              <p className="text-sm font-medium group-hover:underline underline-offset-4 line-clamp-2">
+                {adjacentPosts.next.title}
+              </p>
+            </Link>
+          )}
+        </nav>
+      )}
     </main>
   )
 }

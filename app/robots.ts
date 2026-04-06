@@ -7,6 +7,9 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/private/', '/api/', '/studio/'],
     },
-    sitemap: 'https://www.synergeek.in/sitemap.xml',
+    sitemap: [
+      'https://www.synergeek.in/sitemap.xml',
+      'https://www.synergeek.in/feed.xml',
+    ],
   }
 }

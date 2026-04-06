@@ -9,6 +9,7 @@ import {
   ArrowUp,
   Share2,
 } from "lucide-react"
+import { format, parseISO } from "date-fns"
 import Link from "next/link"
 import { useRef, useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
@@ -30,6 +31,14 @@ export interface HomePageProps {
     color: string
     order: number
   }>
+  latestPosts: Array<{
+    _id: string
+    title: string
+    slug: string
+    date: string
+    excerpt: string
+    categories: string[]
+  }>
   settings: {
     orgName: string
     companyDescription: string
@@ -43,7 +52,7 @@ export interface HomePageProps {
   }
 }
 
-export function HomePage({ services, brands, settings }: HomePageProps) {
+export function HomePage({ services, brands, latestPosts, settings }: HomePageProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const servicesRef = useRef<HTMLDivElement>(null)
   const skillsRef = useRef<HTMLDivElement>(null)
@@ -488,6 +497,72 @@ export function HomePage({ services, brands, settings }: HomePageProps) {
           </div>
         </div>
       </section>
+
+      {/* Latest Blog Posts Section */}
+      {latestPosts && latestPosts.length > 0 && (
+        <section className="py-32 px-6 bg-background">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-balance">Latest from our Blog</h2>
+              <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto text-balance">
+                Insights on software development, AI, and digital strategy
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              {latestPosts.map((post, index) => (
+                <motion.article
+                  key={post._id}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.15 }}
+                  className="rounded-xl border border-border/60 bg-card/40 p-6 flex flex-col"
+                >
+                  <div className="text-xs text-muted-foreground mb-2">
+                    {format(parseISO(post.date), "MMM d, yyyy")}
+                  </div>
+                  <h3 className="text-lg font-semibold leading-snug mb-3">
+                    <Link
+                      href={`/blog/${post.slug}`}
+                      className="hover:underline underline-offset-4"
+                    >
+                      {post.title}
+                    </Link>
+                  </h3>
+                  <p className="text-sm text-muted-foreground line-clamp-3 flex-1">{post.excerpt}</p>
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline underline-offset-4"
+                  >
+                    Read more <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </motion.article>
+              ))}
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="text-center mt-12"
+            >
+              <Link href="/blog">
+                <Button variant="outline" size="lg" className="gap-2">
+                  View all articles <ArrowRight className="w-4 h-4" />
+                </Button>
+              </Link>
+            </motion.div>
+          </div>
+        </section>
+      )}
 
       {/* Mission & Vision Section */}
       <section className="py-32 px-6 bg-black text-white overflow-hidden">

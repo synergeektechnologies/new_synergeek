@@ -29,6 +29,38 @@ export const postSlugsQuery = defineQuery(
   `*[_type == "post"] { "slug": slug.current }`
 )
 
+export const relatedPostsQuery = defineQuery(
+  `*[_type == "post" && slug.current != $slug && count((categories[])[@ in $categories]) > 0] | order(date desc) [0...3] {
+    _id,
+    title,
+    "slug": slug.current,
+    date,
+    excerpt
+  }`
+)
+
+export const adjacentPostsQuery = defineQuery(
+  `{
+    "prev": *[_type == "post" && date > $date] | order(date asc) [0] {
+      title, "slug": slug.current
+    },
+    "next": *[_type == "post" && date < $date] | order(date desc) [0] {
+      title, "slug": slug.current
+    }
+  }`
+)
+
+export const latestPostsQuery = defineQuery(
+  `*[_type == "post"] | order(date desc) [0...3] {
+    _id,
+    title,
+    "slug": slug.current,
+    date,
+    excerpt,
+    categories
+  }`
+)
+
 export const servicesQuery = defineQuery(
   `*[_type == "service"] | order(order asc) {
     _id,

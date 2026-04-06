@@ -2,10 +2,6 @@ import { sanityFetch } from '@/sanity/lib/live'
 import { siteSettingsQuery } from '@/sanity/lib/queries'
 import { ContactPage } from '@/components/contact-page'
 
-export const metadata = {
-  title: "Contact",
-  description: "Get in touch with Synergeek Technologies.",
-}
 
 export default async function ContactPageRoute() {
   const { data: settings } = await sanityFetch({

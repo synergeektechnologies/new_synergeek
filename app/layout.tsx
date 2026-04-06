@@ -82,6 +82,9 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://www.synergeek.in',
+    types: {
+      'application/rss+xml': 'https://www.synergeek.in/feed.xml',
+    },
   },
   category: 'Technology & Digital Solutions',
   icons: {

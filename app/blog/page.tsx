@@ -80,6 +80,19 @@ export default async function BlogIndexPage() {
 
                 <p className="text-sm text-muted-foreground">{post.excerpt}</p>
 
+                {post.categories && post.categories.length > 0 && (
+                  <div className="flex flex-wrap gap-1.5">
+                    {post.categories.map((category: string) => (
+                      <span
+                        key={category}
+                        className="rounded-full bg-muted px-2.5 py-0.5 text-xs text-muted-foreground"
+                      >
+                        {category}
+                      </span>
+                    ))}
+                  </div>
+                )}
+
                 <div>
                   <Link
                     href={`/blog/${post.slug}`}

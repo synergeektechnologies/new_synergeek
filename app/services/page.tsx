@@ -2,10 +2,6 @@ import { sanityFetch } from '@/sanity/lib/live'
 import { servicesQuery, portfolioQuery, siteSettingsQuery } from '@/sanity/lib/queries'
 import { ServicesPage } from '@/components/services-page'
 
-export const metadata = {
-  title: "Services",
-  description: "Explore Synergeek's technology and digital marketing services.",
-}
 
 export default async function ServicesPageRoute() {
   const [
