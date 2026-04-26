@@ -16,6 +16,19 @@ import {
   MessageSquare,
   Cog,
   Server,
+  Search,
+  Target,
+  Megaphone,
+  Sparkles,
+  Magnet,
+  MousePointerClick,
+  Users,
+  BarChart3,
+  Instagram,
+  Hash,
+  Eye,
+  Zap,
+  MapPin,
   type LucideIcon,
 } from 'lucide-react'
 
@@ -37,8 +50,21 @@ const iconMap: Record<string, LucideIcon> = {
   MessageSquare,
   Cog,
   Server,
+  Search,
+  Target,
+  Megaphone,
+  Sparkles,
+  Magnet,
+  MousePointerClick,
+  Users,
+  BarChart3,
+  Instagram,
+  Hash,
+  Eye,
+  Zap,
+  MapPin,
 }
 
 export function getIcon(name: string): LucideIcon {
-  return iconMap[name] || Code
+  return iconMap[name] || Sparkles
 }

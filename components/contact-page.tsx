@@ -39,7 +39,7 @@ export function ContactPage({ settings }: ContactPageProps) {
     "@context": "https://schema.org",
     "@type": "ContactPage",
     "name": `Contact ${settings.orgName}`,
-    "description": `Contact ${settings.orgName} for Digital Marketing, Web Development, Branding, and Creative Services.`,
+    "description": `Contact ${settings.orgName} for Lead Generation, Social Media Management, Performance Marketing, Content Strategy, and SEO.`,
     "url": "https://www.synergeek.in/contact",
     "mainEntity": {
       "@type": "Organization",
@@ -418,7 +418,7 @@ export function ContactPage({ settings }: ContactPageProps) {
                 transition={{ duration: 0.6 }}
                 className="text-white/70 text-xs md:text-sm text-center"
               >
-                2025 Synergeek Technologies. All rights reserved.
+                2026 Synergeek. All rights reserved.
               </motion.p>
 
               {/* Follow Us */}

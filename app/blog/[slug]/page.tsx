@@ -34,15 +34,15 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: post.title,
     description: post.excerpt,
     keywords: post.categories ?? [],
-    authors: [{ name: "Synergeek Technologies", url: BASE_URL }],
+    authors: [{ name: "Synergeek", url: BASE_URL }],
     openGraph: {
       type: "article",
       title: post.title,
       description: post.excerpt,
       url: `${BASE_URL}/blog/${slug}`,
-      siteName: "Synergeek Technologies",
+      siteName: "Synergeek",
       publishedTime: post.date,
-      authors: ["Synergeek Technologies"],
+      authors: ["Synergeek"],
       images: [
         {
           url: ogImage,
@@ -105,12 +105,12 @@ export default async function BlogPostPage({
     dateModified: post.date,
     author: {
       "@type": "Organization",
-      name: "Synergeek Technologies",
+      name: "Synergeek",
       url: BASE_URL,
     },
     publisher: {
       "@type": "Organization",
-      name: "Synergeek Technologies",
+      name: "Synergeek",
       url: BASE_URL,
       logo: {
         "@type": "ImageObject",

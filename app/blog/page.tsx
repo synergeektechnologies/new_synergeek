@@ -6,33 +6,35 @@ import { postsQuery } from "@/sanity/lib/queries"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Blog - Insights & Guides for Builders",
-  description: "Practical UI/UX, engineering, and product notes from Synergeek Technologies. Tips on web development, digital marketing, branding, and AI-powered solutions.",
+  title: "Blog — Marketing, Growth & Creative Strategy",
+  description: "Practical playbooks on lead generation, paid ads, social media, content strategy, branding, and SEO from the team at Synergeek.",
   keywords: [
     "Synergeek Blog",
-    "Web Development Blog",
-    "Digital Marketing Insights",
-    "UI/UX Design Tips",
+    "Marketing Insights",
+    "Lead Generation Tips",
+    "Performance Marketing",
+    "Social Media Strategy",
+    "Content Strategy",
     "Branding Guides",
-    "AI Solutions Blog",
+    "SEO Tips",
   ],
   openGraph: {
-    title: "Blog - Insights & Guides for Builders | Synergeek",
-    description: "Practical UI/UX, engineering, and product notes from Synergeek Technologies.",
+    title: "Blog — Marketing, Growth & Creative Strategy | Synergeek",
+    description: "Practical playbooks on lead generation, paid ads, social media, content strategy, branding, and SEO from the team at Synergeek.",
     url: "https://www.synergeek.in/blog",
     images: [
       {
         url: "/synergeek-og.png",
         width: 1200,
         height: 630,
-        alt: "Synergeek Blog - Insights & Guides",
+        alt: "Synergeek Blog — Marketing & Growth Insights",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blog - Insights & Guides for Builders | Synergeek",
-    description: "Practical UI/UX, engineering, and product notes from Synergeek Technologies.",
+    title: "Blog — Marketing, Growth & Creative Strategy | Synergeek",
+    description: "Practical playbooks on lead generation, paid ads, social media, content strategy, branding, and SEO from the team at Synergeek.",
     images: ["/synergeek-og.png"],
   },
   alternates: {
@@ -51,7 +53,7 @@ export default async function BlogIndexPage() {
       <header className="mb-10">
         <h1 className="text-3xl font-semibold tracking-tight">Blog</h1>
         <p className="mt-2 text-sm text-muted-foreground">
-          Practical UI/UX, engineering, and product notes—written for builders.
+          Marketing playbooks, growth experiments, and creative strategy — written for brands.
         </p>
       </header>
 

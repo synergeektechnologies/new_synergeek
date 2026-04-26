@@ -35,9 +35,9 @@ export async function GET() {
   const feed = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Synergeek Technologies Blog</title>
+    <title>Synergeek Blog</title>
     <link>${BASE_URL}/blog</link>
-    <description>Insights on software development, AI, digital marketing, and modern technology from Synergeek Technologies.</description>
+    <description>Marketing playbooks, growth experiments, paid ads, social media strategy, content, branding, and SEO insights from Synergeek.</description>
     <language>en-in</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     <atom:link href="${BASE_URL}/feed.xml" rel="self" type="application/rss+xml"/>

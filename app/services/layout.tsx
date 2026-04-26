@@ -1,44 +1,41 @@
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Our Services - Digital Marketing, Web Development & Branding",
-  description: "Explore Synergeek's comprehensive services including Digital Marketing, Web Design & Development, Video Production, Branding, SEO, Social Media Marketing, Meta Ads, Google Ads, UI/UX Design, and E-commerce Solutions.",
+  title: "Our Services — Lead Gen, Ads, SMM, Content & SEO",
+  description: "Synergeek's creative marketing services: Social Media Lead Generation, Social Media Management, Performance Marketing (Meta & Google Ads), Content Strategy & Branding, and Search Engine Optimization (SEO).",
   keywords: [
-    "Digital Marketing Services",
-    "Web Design Services", 
-    "Web Development Services",
-    "Video Production Services",
+    "Social Media Lead Generation",
+    "Social Media Management",
+    "Performance Marketing",
+    "Meta Ads",
+    "Google Ads",
+    "Content Strategy",
     "Branding Services",
     "SEO Services",
-    "Social Media Marketing",
-    "Meta Ads Services",
-    "Google Ads Services",
-    "UI/UX Design Services",
-    "App Development Services",
-    "E-commerce Solutions",
-    "Content Production",
-    "Product Photography",
-    "Model Shoots",
-    "Influencer Marketing",
+    "Search Engine Optimization",
+    "Lead Generation Services",
+    "Marketing Agency India",
+    "Creative Agency Coimbatore",
     "Ad Campaigns",
-    "Search Engine Optimization"
+    "Brand Storytelling",
+    "Organic Growth"
   ],
   openGraph: {
-    title: "Our Services - Digital Marketing, Web Development & Branding | Synergeek",
-    description: "Explore Synergeek's comprehensive services including Digital Marketing, Web Design & Development, Video Production, Branding, SEO, Social Media Marketing, Meta Ads, Google Ads, UI/UX Design, and E-commerce Solutions.",
+    title: "Our Services — Lead Gen, Ads, SMM, Content & SEO | Synergeek",
+    description: "Synergeek's creative marketing services: Social Media Lead Generation, Social Media Management, Performance Marketing (Meta & Google Ads), Content Strategy & Branding, and Search Engine Optimization (SEO).",
     url: "https://www.synergeek.in/services",
     images: [
       {
         url: "/synergeek-logo.png",
         width: 1200,
         height: 630,
-        alt: "Synergeek Services - Digital Marketing Agency",
+        alt: "Synergeek Services — Creative Marketing Agency",
       },
     ],
   },
   twitter: {
-    title: "Our Services - Digital Marketing, Web Development & Branding | Synergeek",
-    description: "Explore Synergeek's comprehensive services including Digital Marketing, Web Design & Development, Video Production, Branding, SEO, Social Media Marketing, Meta Ads, Google Ads, UI/UX Design, and E-commerce Solutions.",
+    title: "Our Services — Lead Gen, Ads, SMM, Content & SEO | Synergeek",
+    description: "Synergeek's creative marketing services: Social Media Lead Generation, Social Media Management, Performance Marketing (Meta & Google Ads), Content Strategy & Branding, and Search Engine Optimization (SEO).",
     images: ["/synergeek-logo.png"],
   },
   alternates: {
