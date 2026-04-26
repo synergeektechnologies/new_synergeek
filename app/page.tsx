@@ -21,10 +21,10 @@ export default async function HomePageRoute() {
       brands={brands ?? []}
       latestPosts={latestPosts ?? []}
       settings={settings ?? {
-        orgName: 'Synergeek Technologies',
-        companyDescription: '',
-        mission: '',
-        vision: '',
+        orgName: 'Synergeek',
+        companyDescription: 'A creative marketing agency that turns content, ads, and social into customers — every day.',
+        mission: 'To be the creative engine behind brands that refuse to be ignored — turning ideas, content, and ads into measurable growth.',
+        vision: 'A world where every business has a creative team that makes it impossible to scroll past.',
         contactEmail: '',
         phone1: '',
         phone2: '',

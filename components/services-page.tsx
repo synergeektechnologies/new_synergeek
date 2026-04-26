@@ -34,15 +34,15 @@ export function ServicesPage({ services, portfolio, settings }: ServicesPageProp
   const servicesStructuredData = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": `${settings.orgName} - Software & AI Solutions`,
-    "description": settings.companyDescription || "Synergeek Technologies is a technology and digital solutions company that helps businesses build, grow, and scale using modern software, digital strategies, and artificial intelligence.",
+    "name": `${settings.orgName} - Creative Marketing Services`,
+    "description": settings.companyDescription || "Synergeek is a creative marketing agency in India turning social media, ads, and content into measurable growth.",
     "provider": {
       "@type": "Organization",
       "name": settings.orgName,
       "url": "https://www.synergeek.in",
       "logo": "https://www.synergeek.in/synergeek-logo.png"
     },
-    "serviceType": "Technology & AI Solutions",
+    "serviceType": "Creative Marketing & Growth",
     "areaServed": {
       "@type": "Country",
       "name": "India"
@@ -109,7 +109,7 @@ export function ServicesPage({ services, portfolio, settings }: ServicesPageProp
             className="text-md md:text-lg mt-[-30px] lg:text-xl text-muted-foreground max-w-4xl mx-auto mb-12 leading-relaxed text-balance"
             style={{ fontFamily: "var(--font-roboto-condensed)" }}
           >
-            {settings.companyDescription || "Synergeek Technologies is a technology and digital solutions company that helps businesses build, grow, and scale using modern software, digital strategies, and artificial intelligence."}
+            {settings.companyDescription || "A creative marketing agency that turns content, ads, and social into customers — every day."}
           </motion.p>
         </div>
       </section>
@@ -184,7 +184,7 @@ export function ServicesPage({ services, portfolio, settings }: ServicesPageProp
               PORTFOLIO
             </h2>
             <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">
-              Explore our creative work and see the magic we bring to every project
+              Campaigns, content, and brand work we've shipped for our partners.
             </p>
           </motion.div>
 
@@ -362,7 +362,7 @@ export function ServicesPage({ services, portfolio, settings }: ServicesPageProp
 
               {/* Copyright */}
               <p className="text-sm md:text-base text-gray-400 text-center">
-                2025 {settings.orgName}. All rights reserved.
+                2026 {settings.orgName}. All rights reserved.
               </p>
 
               {/* Follow Us */}

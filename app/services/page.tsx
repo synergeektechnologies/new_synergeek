@@ -26,8 +26,8 @@ export default async function ServicesPageRoute() {
         phone2: '',
         address: '',
         instagramUrl: '',
-        orgName: 'Synergeek Technologies',
-        companyDescription: '',
+        orgName: 'Synergeek',
+        companyDescription: 'A creative marketing agency that turns content, ads, and social into customers — every day.',
       }}
     />
   )

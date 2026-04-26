@@ -22,7 +22,7 @@ export const serviceType = defineType({
       name: 'icon',
       title: 'Icon',
       type: 'string',
-      description: 'Lucide icon key (e.g., "Code", "Globe", "Rocket", "Share2", "TrendingUp", "Webhook", "Lightbulb", "Database")',
+      description: 'Lucide icon key — recommended for marketing services: "Magnet" (Lead Gen), "Share2" or "Instagram" (SMM), "Megaphone" or "Target" (Ads), "PenTool" or "Sparkles" (Content/Branding), "Search" or "TrendingUp" (SEO). Other available: Bot, Users, MousePointerClick, BarChart3, Hash, Eye, Zap, Lightbulb, Rocket, Camera, MessageSquare, Globe.',
     }),
     defineField({
       name: 'section',
@@ -30,9 +30,9 @@ export const serviceType = defineType({
       type: 'string',
       options: {
         list: [
-          { title: 'Software & Web Development', value: 'software' },
-          { title: 'Digital Marketing', value: 'marketing' },
-          { title: 'AI Solutions', value: 'ai' },
+          { title: 'Tier 1 — Get Found', value: 'tier1' },
+          { title: 'Tier 2 — Convert', value: 'tier2' },
+          { title: 'Tier 3 — Grow', value: 'tier3' },
         ],
         layout: 'dropdown',
       },

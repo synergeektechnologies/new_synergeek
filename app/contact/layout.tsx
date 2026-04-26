@@ -1,36 +1,36 @@
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Contact Us - Get Your Project Started | Synergeek Technologies",
-  description: "Contact Synergeek Technologies for Digital Marketing, Web Development, Branding, and Creative Services. Located in Coimbatore, India. Get a free consultation for your project.",
+  title: "Contact Us — Let's Grow Your Brand | Synergeek",
+  description: "Contact Synergeek for Lead Generation, Social Media Management, Performance Marketing, Content Strategy, and SEO. Located in Coimbatore, India. Get a free consultation for your brand.",
   keywords: [
     "Contact Synergeek",
-    "Digital Marketing Consultation",
-    "Web Development Consultation", 
-    "Branding Consultation",
-    "Creative Agency Contact",
-    "Coimbatore Digital Agency",
+    "Marketing Agency Contact",
+    "Lead Generation Consultation",
+    "Social Media Marketing Consultation",
+    "Performance Marketing Consultation",
+    "SEO Consultation",
+    "Coimbatore Marketing Agency",
     "India Marketing Agency",
-    "Project Consultation",
-    "Free Quote",
-    "Business Inquiry"
+    "Free Consultation",
+    "Brand Inquiry"
   ],
   openGraph: {
-    title: "Contact Us - Get Your Project Started | Synergeek Technologies",
-    description: "Contact Synergeek Technologies for Digital Marketing, Web Development, Branding, and Creative Services. Located in Coimbatore, India. Get a free consultation for your project.",
+    title: "Contact Us — Let's Grow Your Brand | Synergeek",
+    description: "Contact Synergeek for Lead Generation, Social Media Management, Performance Marketing, Content Strategy, and SEO. Located in Coimbatore, India. Get a free consultation for your brand.",
     url: "https://www.synergeek.in/contact",
     images: [
       {
         url: "/synergeek-logo.png",
         width: 1200,
         height: 630,
-        alt: "Contact Synergeek Technologies - Digital Marketing Agency",
+        alt: "Contact Synergeek — Creative Marketing Agency",
       },
     ],
   },
   twitter: {
-    title: "Contact Us - Get Your Project Started | Synergeek Technologies",
-    description: "Contact Synergeek Technologies for Digital Marketing, Web Development, Branding, and Creative Services. Located in Coimbatore, India. Get a free consultation for your project.",
+    title: "Contact Us — Let's Grow Your Brand | Synergeek",
+    description: "Contact Synergeek for Lead Generation, Social Media Management, Performance Marketing, Content Strategy, and SEO. Located in Coimbatore, India. Get a free consultation for your brand.",
     images: ["/synergeek-logo.png"],
   },
   alternates: {

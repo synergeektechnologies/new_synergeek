@@ -22,7 +22,7 @@ export interface HomePageProps {
     title: string
     description: string
     icon: string
-    section: 'software' | 'marketing' | 'ai'
+    section: 'tier1' | 'tier2' | 'tier3'
     order: number
   }>
   brands: Array<{
@@ -71,9 +71,9 @@ export function HomePage({ services, brands, latestPosts, settings }: HomePagePr
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8])
 
-  const redSectionY = useTransform(servicesScrollProgress, [0, 0.5, 1], [50, 0, -50])
-  const orangeSectionY = useTransform(servicesScrollProgress, [0, 0.3, 0.7, 1], [100, 50, 0, -50])
-  const purpleSectionY = useTransform(servicesScrollProgress, [0, 0.5, 1], [150, 75, 0])
+  const violetSectionY = useTransform(servicesScrollProgress, [0, 0.5, 1], [50, 0, -50])
+  const coralSectionY = useTransform(servicesScrollProgress, [0, 0.3, 0.7, 1], [100, 50, 0, -50])
+  const yellowSectionY = useTransform(servicesScrollProgress, [0, 0.5, 1], [150, 75, 0])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -158,46 +158,54 @@ export function HomePage({ services, brands, latestPosts, settings }: HomePagePr
     },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Digital Marketing Services",
+      "name": "Creative Marketing Services",
       "itemListElement": [
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Digital Marketing",
-            "description": "Comprehensive digital marketing strategies including social media marketing, SEO, and online advertising"
+            "name": "Social Media Lead Generation",
+            "description": "Turning your social media into a system that consistently generates leads."
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Web Design & Development",
-            "description": "Custom website design and development services including UI/UX design and responsive web solutions"
+            "name": "Social Media Management",
+            "description": "Complete handling of your content, posting, and growth strategy."
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Video Production",
-            "description": "Professional video production services including product photography and model shoots"
+            "name": "Performance Marketing (Ads)",
+            "description": "Running targeted ad campaigns to bring in qualified leads."
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Branding",
-            "description": "Complete branding solutions including logo design, brand identity, and visual design"
+            "name": "Content Strategy & Branding",
+            "description": "Creating content plans that attract, engage, and convert your audience."
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "E-commerce Solutions",
-            "description": "E-commerce platform development and optimization services"
+            "name": "Search Engine Optimization (SEO)",
+            "description": "Improving your online visibility and driving organic traffic."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Local SEO & Google Business Profile",
+            "description": "Showing up in Maps and local searches with an optimized Google Business Profile and location targeting."
           }
         }
       ]
@@ -242,12 +250,12 @@ export function HomePage({ services, brands, latestPosts, settings }: HomePagePr
 
       {/* Services Section - Responsive Design */}
       <div ref={servicesRef} className="relative">
-        {/* Software & Web Development Section */}
+        {/* Tier 1 — Get Found (SEO) */}
         <motion.section
-          style={{ y: redSectionY }}
+          style={{ y: violetSectionY }}
           className="relative sm:sticky sm:top-0 sm:min-h-screen flex items-center justify-center overflow-hidden"
         >
-          <div className="absolute inset-0 bg-[#E53935]" />
+          <div className="absolute inset-0 bg-[#7C3AED]" />
           <div className="relative z-10 max-w-7xl mx-auto px-6 py-12 sm:py-20">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
@@ -256,57 +264,14 @@ export function HomePage({ services, brands, latestPosts, settings }: HomePagePr
               transition={{ duration: 0.8 }}
               className="text-center mb-8 sm:mb-16"
             >
-              <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 text-balance">SOFTWARE & WEB DEVELOPMENT</h2>
+              <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 text-balance">GET FOUND</h2>
               <p className="text-lg sm:text-xl md:text-2xl text-white/90 max-w-3xl mx-auto text-balance">
-                Building scalable digital foundations for modern businesses
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 lg:gap-12">
-              {services.filter(s => s.section === 'software').map((service, index) => {
-                const Icon = getIcon(service.icon)
-                return (
-                  <motion.div
-                    key={service.title}
-                    initial={{ opacity: 0, y: 50, rotate: 0 }}
-                    whileInView={{ opacity: 1, y: 0, rotate: index === 0 ? -8 : index === 2 ? 8 : 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: index * 0.2 }}
-                    whileHover={{ scale: 1.05, rotate: 0 }}
-                    className="bg-white rounded-2xl p-6 md:p-8 shadow-2xl"
-                  >
-                    <Icon className="w-12 h-12 md:w-16 md:h-16 mb-4 md:mb-6 text-[#E53935]" />
-                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 md:mb-4">{service.title}</h3>
-                    <p className="text-sm md:text-base text-gray-600 leading-relaxed">{service.description}</p>
-                  </motion.div>
-                )
-              })}
-            </div>
-          </div>
-        </motion.section>
-
-        {/* Digital Marketing Section */}
-        <motion.section
-          style={{ y: orangeSectionY }}
-          className="relative sm:sticky sm:top-0 sm:min-h-screen flex items-center justify-center overflow-hidden mt-[-30px] md:mt-0"
-        >
-          <div className="absolute inset-0 bg-[#F5A962]" />
-          <div className="relative z-10 max-w-7xl mx-auto px-6 py-12 sm:py-20">
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-8 sm:mb-16"
-            >
-              <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 text-balance">DIGITAL MARKETING</h2>
-              <p className="text-lg sm:text-xl md:text-2xl text-white/90 max-w-3xl mx-auto text-balance">
-                Strategic marketing that accelerates your business growth
+                Be the answer when your customers search.
               </p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 max-w-5xl mx-auto">
-              {services.filter(s => s.section === 'marketing').map((service, index) => {
+              {services.filter(s => s.section === 'tier1').map((service, index) => {
                 const Icon = getIcon(service.icon)
                 return (
                   <motion.div
@@ -318,7 +283,7 @@ export function HomePage({ services, brands, latestPosts, settings }: HomePagePr
                     whileHover={{ scale: 1.05, rotate: 0 }}
                     className="bg-white rounded-2xl p-6 md:p-8 lg:p-10 shadow-2xl"
                   >
-                    <Icon className="w-12 h-12 md:w-16 md:h-16 mb-4 md:mb-6 text-[#F5A962]" />
+                    <Icon className="w-12 h-12 md:w-16 md:h-16 mb-4 md:mb-6 text-[#7C3AED]" />
                     <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 md:mb-4">{service.title}</h3>
                     <p className="text-sm md:text-base lg:text-lg text-gray-600 leading-relaxed">{service.description}</p>
                   </motion.div>
@@ -328,12 +293,55 @@ export function HomePage({ services, brands, latestPosts, settings }: HomePagePr
           </div>
         </motion.section>
 
-        {/* AI Solutions Section */}
+        {/* Tier 2 — Convert (Lead Gen + Performance Marketing) */}
         <motion.section
-          style={{ y: purpleSectionY }}
+          style={{ y: coralSectionY }}
+          className="relative sm:sticky sm:top-0 sm:min-h-screen flex items-center justify-center overflow-hidden mt-[-30px] md:mt-0"
+        >
+          <div className="absolute inset-0 bg-[#FF5C5C]" />
+          <div className="relative z-10 max-w-7xl mx-auto px-6 py-12 sm:py-20">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-8 sm:mb-16"
+            >
+              <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 text-balance">CONVERT</h2>
+              <p className="text-lg sm:text-xl md:text-2xl text-white/90 max-w-3xl mx-auto text-balance">
+                Turn attention into qualified leads.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 max-w-5xl mx-auto">
+              {services.filter(s => s.section === 'tier2').map((service, index) => {
+                const Icon = getIcon(service.icon)
+                return (
+                  <motion.div
+                    key={service.title}
+                    initial={{ opacity: 0, y: 50, rotate: 0 }}
+                    whileInView={{ opacity: 1, y: 0, rotate: index === 0 ? -6 : 6 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: index * 0.2 }}
+                    whileHover={{ scale: 1.05, rotate: 0 }}
+                    className="bg-white rounded-2xl p-6 md:p-8 lg:p-10 shadow-2xl"
+                  >
+                    <Icon className="w-12 h-12 md:w-16 md:h-16 mb-4 md:mb-6 text-[#FF5C5C]" />
+                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 md:mb-4">{service.title}</h3>
+                    <p className="text-sm md:text-base lg:text-lg text-gray-600 leading-relaxed">{service.description}</p>
+                  </motion.div>
+                )
+              })}
+            </div>
+          </div>
+        </motion.section>
+
+        {/* Tier 3 — Grow (SMM + Content Strategy) */}
+        <motion.section
+          style={{ y: yellowSectionY }}
           className="relative sm:sticky sm:top-0 sm:min-h-screen flex items-center justify-center overflow-hidden mt-[-49px] md:mt-0"
         >
-          <div className="absolute inset-0 bg-linear-to-br from-indigo-600 to-purple-700" />
+          <div className="absolute inset-0 bg-[#FFD60A]" />
           <div className="relative z-10 max-w-7xl mx-auto px-6 py-12 sm:py-20">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -342,26 +350,26 @@ export function HomePage({ services, brands, latestPosts, settings }: HomePagePr
               transition={{ duration: 0.8 }}
               className="text-center"
             >
-              <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 text-balance">AI SOLUTIONS</h2>
-              <p className="text-lg sm:text-xl md:text-2xl text-white/90 max-w-3xl mx-auto text-balance mb-6 sm:mb-8 md:mb-12">
-                Empowering businesses with intelligent autonomous systems
+              <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold text-black mb-6 text-balance">GROW</h2>
+              <p className="text-lg sm:text-xl md:text-2xl text-black/80 max-w-3xl mx-auto text-balance mb-6 sm:mb-8 md:mb-12">
+                Keep them coming back.
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 lg:gap-12 text-left">
-                {services.filter(s => s.section === 'ai').map((service, index) => {
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 max-w-5xl mx-auto text-left">
+                {services.filter(s => s.section === 'tier3').map((service, index) => {
                   const Icon = getIcon(service.icon)
                   return (
                     <motion.div
                       key={service.title}
                       initial={{ opacity: 0, y: 50, rotate: 0 }}
-                      whileInView={{ opacity: 1, y: 0, rotate: index === 0 ? -8 : index === 2 ? 8 : 0 }}
+                      whileInView={{ opacity: 1, y: 0, rotate: index === 0 ? -6 : 6 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.8, delay: index * 0.2 }}
                       whileHover={{ scale: 1.05, rotate: 0 }}
-                      className="bg-white rounded-2xl p-6 md:p-8 shadow-2xl"
+                      className="bg-black rounded-2xl p-6 md:p-8 lg:p-10 shadow-2xl"
                     >
-                      <Icon className="w-12 h-12 md:w-16 md:h-16 mb-4 md:mb-6 text-indigo-600" />
-                      <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 md:mb-4">{service.title}</h3>
-                      <p className="text-sm md:text-base lg:text-lg text-gray-600 leading-relaxed">{service.description}</p>
+                      <Icon className="w-12 h-12 md:w-16 md:h-16 mb-4 md:mb-6 text-[#FFD60A]" />
+                      <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">{service.title}</h3>
+                      <p className="text-sm md:text-base lg:text-lg text-white/80 leading-relaxed">{service.description}</p>
                     </motion.div>
                   )
                 })}
@@ -385,14 +393,14 @@ export function HomePage({ services, brands, latestPosts, settings }: HomePagePr
 
         <div className="space-y-8 md:space-y-12">
           {[
-            "AGENTIC AI SOLUTIONS",
-            "CUSTOM SOFTWARE DEVELOPMENT",
-            "AI CHATBOT SOLUTIONS",
-            "WEB DESIGN & DEVELOPMENT",
-            "MOBILE APP DEVELOPMENT",
-            "DIGITAL MARKETING",
-            "BUSINESS AUTOMATION",
-            "BRANDING & CREATIVE",
+            "LEAD GENERATION",
+            "SOCIAL MEDIA MANAGEMENT",
+            "PERFORMANCE MARKETING",
+            "CONTENT STRATEGY",
+            "SEO & ORGANIC GROWTH",
+            "BRAND STORYTELLING",
+            "AD CREATIVE",
+            "ANALYTICS & GROWTH",
           ].map((skill, index) => (
             <motion.h3
               key={skill}
@@ -424,7 +432,7 @@ export function HomePage({ services, brands, latestPosts, settings }: HomePagePr
           >
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-balance">Trusted by Leading Brands</h2>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto text-balance">
-              We've partnered with innovative companies to deliver exceptional digital solutions
+              We've partnered with bold brands to grow audiences, leads, and revenue.
             </p>
           </motion.div>
 
@@ -511,7 +519,7 @@ export function HomePage({ services, brands, latestPosts, settings }: HomePagePr
             >
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-balance">Latest from our Blog</h2>
               <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto text-balance">
-                Insights on software development, AI, and digital strategy
+                Insights on marketing, growth, and creative strategy
               </p>
             </motion.div>
 
@@ -692,7 +700,7 @@ export function HomePage({ services, brands, latestPosts, settings }: HomePagePr
                 transition={{ duration: 0.6 }}
                 className="text-white/70 text-xs md:text-sm text-center"
               >
-                2026 Synergeek Technologies. All rights reserved.
+                2026 Synergeek. All rights reserved.
               </motion.p>
 
               {/* Follow Us */}
