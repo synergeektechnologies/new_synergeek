@@ -106,6 +106,33 @@ export default async function RootLayout({
     <html lang="en">
       <head>
         <meta name="facebook-domain-verification" content="cfhzzbdcpl610u3v3qsdk9pzox2vss" />
+        {/* Organisation JSON-LD — sitewide, static */}
+        <script
+          type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "url": "https://www.synergeek.in/",
+              "name": "Synergeek",
+              "description": "Synergeek is a creative marketing agency in India turning social media, ads, and content into measurable growth — specialising in lead generation, social media management, performance marketing, content strategy, and SEO.",
+              "telephone": "+91-9677741597",
+              "email": "company@synergeek.in",
+              "logo": "https://www.synergeek.in/synergeek-logo.png",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Coimbatore",
+                "addressRegion": "Tamil Nadu",
+                "addressCountry": "IN",
+                "postalCode": "641002"
+              },
+              "sameAs": [
+                "https://www.instagram.com/synergeek.in"
+              ]
+            })
+          }}
+        />
         {/* Google Analytics & Google Ads Conversion ID: AW-16812402326 */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-F3078JXHG0"

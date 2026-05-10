@@ -113,6 +113,8 @@ export function HomePage({ services, brands, latestPosts, settings }: HomePagePr
     "name": settings.orgName,
     "description": settings.companyDescription,
     "url": "https://www.synergeek.in",
+    "telephone": "+91-9677741597",
+    "email": "company@synergeek.in",
     "logo": "https://www.synergeek.in/synergeek-logo.png",
     "image": "https://www.synergeek.in/synergeek-logo.png",
     "address": {
@@ -212,9 +214,46 @@ export function HomePage({ services, brands, latestPosts, settings }: HomePagePr
     }
   }
 
+  const faqData = [
+    {
+      question: "What services does Synergeek offer?",
+      answer: "Synergeek offers social media lead generation, social media management, performance marketing (Meta & Google Ads), content strategy & branding, SEO, and local SEO & Google Business Profile optimisation. We turn content, ads, and social media into measurable customer growth for businesses across India."
+    },
+    {
+      question: "How much does it cost?",
+      answer: "Pricing depends on the scope and mix of services you need. We offer flexible monthly packages tailored to your goals and budget — from focused single-service plans to full-stack marketing retainers. Contact us at company@synergeek.in for a custom quote."
+    },
+    {
+      question: "How do I get started?",
+      answer: "Simply reach out through our contact form at synergeek.in/contact or email us at company@synergeek.in. We'll schedule a free discovery call to understand your goals and recommend the right services for your business."
+    },
+    {
+      question: "Who is Synergeek best suited for?",
+      answer: "Synergeek works best with small to mid-sized businesses, D2C brands, local service providers, and startups in India who want to generate consistent leads and grow their online presence through creative, results-driven marketing."
+    },
+    {
+      question: "Where is Synergeek located?",
+      answer: "Synergeek is based in Coimbatore, Tamil Nadu, India. We work with clients across India and are equipped to partner with brands internationally."
+    }
+  ]
+
+  const faqStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqData.map(({ question, answer }) => ({
+      "@type": "Question",
+      "name": question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": answer
+      }
+    }))
+  }
+
   return (
     <div ref={containerRef} className="min-h-screen">
       <StructuredData data={structuredData} />
+      <StructuredData data={faqStructuredData} id="faq-schema" />
       {/* Hero Section */}
       <motion.section
         style={{ opacity, scale }}
@@ -598,6 +637,36 @@ export function HomePage({ services, brands, latestPosts, settings }: HomePagePr
                 {settings.vision}
               </p>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section id="faq" className="py-24 px-6 bg-background">
+        <div className="max-w-3xl mx-auto">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl md:text-5xl font-bold tracking-tighter text-center mb-16"
+          >
+            Frequently Asked Questions
+          </motion.h2>
+          <div className="divide-y divide-border">
+            {faqData.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.06 }}
+                className="py-7"
+              >
+                <h3 className="text-base md:text-lg font-semibold text-foreground mb-2">{item.question}</h3>
+                <p className="text-muted-foreground text-sm md:text-base leading-relaxed">{item.answer}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
